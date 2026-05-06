@@ -151,6 +151,12 @@
       <button class="social-btn"><span>A</span> Continue with Apple</button>
     </div>
 
+    <div class="auth-divider">Demo Access</div>
+    <div class="d-flex gap-3 justify-center mb-8">
+      <a href="dashboard-user.html" class="btn btn-outline btn-sm">User Dashboard</a>
+      <a href="dashboard-admin.html" class="btn btn-outline btn-sm">Admin Dashboard</a>
+    </div>
+
     <p class="fs-sm mt-8 text-muted">Don't have an account? <a href="register.html">Sign up free</a></p>
   </div>
 </div>
@@ -161,12 +167,17 @@
 $(document).ready(function() {
     $('#login-form').on('submit', function(e) {
         e.preventDefault();
+        const email = $('#email').val().toLowerCase();
         const $btn = $('#login-btn');
         $btn.html('Checking...').prop('disabled', true);
         
         setTimeout(() => {
-            window.showToast('success', 'Success!', 'Welcome back, Artisan! Redirecting...');
-            setTimeout(() => window.location.href = 'dashboard-user.html', 1000);
+            window.showToast('success', 'Success!', 'Welcome back, Administrator! Redirecting...');
+            
+            // Defaulting to Admin Dashboard as requested
+            const target = 'dashboard-admin.html';
+            
+            setTimeout(() => window.location.href = target, 1000);
         }, 1200);
     });
 });
