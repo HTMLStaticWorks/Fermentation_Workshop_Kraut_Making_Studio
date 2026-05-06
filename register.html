@@ -36,15 +36,14 @@
     }
     .auth-logo {
       display: inline-flex;
-      flex-direction: column;
       align-items: center;
-      gap: var(--sp-2);
+      gap: var(--sp-4);
       margin-bottom: var(--sp-10);
       text-decoration: none;
     }
-    .auth-logo .logo-mark { font-size: 4rem; line-height: 1; }
-    .auth-logo .logo-name { font-size: 2.25rem; color: var(--clr-text); font-weight: var(--fw-black); }
-    .auth-logo .logo-tagline { font-size: var(--fs-xs); color: var(--clr-primary); letter-spacing: 0.2em; text-transform: uppercase; }
+    .auth-logo .logo-mark { font-size: 3.5rem; line-height: 1; }
+    .auth-logo .logo-name { font-size: 2rem; color: var(--clr-text); font-weight: var(--fw-black); line-height: 1; }
+    .auth-logo .logo-tagline { font-size: var(--fs-xs); color: var(--clr-primary); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-top: 2px; }
     
     .auth-card h2 {
       font-size: var(--fs-md);
@@ -106,8 +105,10 @@
   <div class="auth-card">
     <a href="index.html" class="auth-logo">
       <div class="logo-mark">🫙</div>
-      <div class="logo-name">KrautCraft</div>
-      <div class="logo-tagline">Fermentation Studio</div>
+      <div class="logo-text" style="text-align:left;">
+        <span class="logo-name">KrautCraft</span>
+        <span class="logo-tagline">Fermentation Studio</span>
+      </div>
     </a>
 
     <h2>Start Fermenting Today</h2>
