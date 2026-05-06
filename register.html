@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Studio | KrautCraft Fermentation Studio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--clr-bg-alt);
+      padding: var(--sp-6);
+      position: relative;
+    }
+    .auth-toggles {
+      position: absolute;
+      top: var(--sp-6);
+      right: var(--sp-6);
+      display: flex;
+      gap: var(--sp-2);
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 480px;
+      background: var(--clr-surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: var(--sp-10);
+      text-align: center;
+    }
+    .auth-logo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-10);
+      text-decoration: none;
+    }
+    .auth-logo .logo-mark { font-size: 4rem; line-height: 1; }
+    .auth-logo .logo-name { font-size: 2.25rem; color: var(--clr-text); font-weight: var(--fw-black); }
+    .auth-logo .logo-tagline { font-size: var(--fs-xs); color: var(--clr-primary); letter-spacing: 0.2em; text-transform: uppercase; }
+    
+    .auth-card h2 {
+      font-size: var(--fs-md);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--sp-2);
+      color: var(--clr-text);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .social-btns {
+      display: flex;
+      gap: var(--sp-3);
+      margin-top: var(--sp-8);
+    }
+    .social-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-2);
+      padding: 0.75rem;
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--clr-text);
+      font-weight: var(--fw-semi);
+      font-size: var(--fs-xs);
+      transition: background var(--trans-fast);
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--clr-bg-alt); }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      margin: var(--sp-8) 0;
+      color: var(--clr-text-light);
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--clr-border);
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-toggles">
+    <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+  </div>
+
+  <div class="auth-card">
+    <a href="index.html" class="auth-logo">
+      <div class="logo-mark">🫙</div>
+      <div class="logo-name">KrautCraft</div>
+      <div class="logo-tagline">Fermentation Studio</div>
+    </a>
+
+    <h2>Start Fermenting Today</h2>
+    <p class="text-muted fs-sm mb-8">Join 50,000+ artisans learning the craft.</p>
+
+    <form id="register-form">
+      <div class="grid-2" style="text-align:left;">
+        <div class="form-group">
+          <label class="form-label" for="fname">First Name</label>
+          <input type="text" id="fname" class="form-control" placeholder="Jane" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="lname">Last Name</label>
+          <input type="text" id="lname" class="form-control" placeholder="Doe" required>
+        </div>
+      </div>
+
+      <div class="form-group" style="text-align:left;">
+        <label class="form-label" for="email">Email Address</label>
+        <div class="input-wrap">
+          <span class="input-icon">📧</span>
+          <input type="email" id="email" class="form-control" placeholder="jane@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group" style="text-align:left;">
+        <label class="form-label" for="password">Create Password</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" class="form-control" placeholder="Min 8 characters" required>
+          <button type="button" class="pw-toggle" aria-label="Show password">👁️</button>
+        </div>
+        <span class="form-hint">Use at least 8 characters with letters & numbers.</span>
+      </div>
+
+      <div class="mb-8" style="text-align:left;">
+        <label class="checkbox-wrap">
+          <input type="checkbox" required>
+          <span class="fs-xs">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-full" id="register-btn">Create Account</button>
+    </form>
+
+    <div class="auth-divider">Or join with</div>
+
+    <div class="social-btns">
+      <button class="social-btn">Google</button>
+      <button class="social-btn">Apple</button>
+      <button class="social-btn">Facebook</button>
+    </div>
+
+    <p class="fs-sm mt-8 text-muted">Already have an account? <a href="login.html">Sign in</a></p>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<script>
+$(document).ready(function() {
+    $('#register-form').on('submit', function(e) {
+        e.preventDefault();
+        const $btn = $('#register-btn');
+        $btn.html('Creating Account...').prop('disabled', true);
+        
+        setTimeout(() => {
+            window.showToast('success', 'Welcome, Artisan!', 'Account created successfully. Redirecting...');
+            setTimeout(() => window.location.href = 'dashboard-user.html', 1500);
+        }, 1200);
+    });
+});
+</script>
+</body>
+</html>

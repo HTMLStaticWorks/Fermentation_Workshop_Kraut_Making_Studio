@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrautCraft | Fermentation Workshop & Kraut Making Studio</title>
+  <meta name="description" content="Master the ancient art of fermentation. Join KrautCraft's hands-on workshops, online courses, and artisan shop for all your sauerkraut, kimchi & kombucha needs.">
+  <meta name="keywords" content="fermentation, sauerkraut, kimchi, kombucha, workshop, kraut making">
+  <meta property="og:title" content="KrautCraft Fermentation Studio">
+  <meta property="og:description" content="From humble kraut to complex kombucha — master fermentation with us.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader" role="status" aria-label="Loading page">
+  <div class="loader-jar">
+    <div class="loader-jar-icon"></div>
+    <p>Brewing your experience…</p>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="site-header" role="banner">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="site-logo" aria-label="Fermentation Workshop Home">
+      <div class="logo-mark" aria-hidden="true">🫙</div>
+      <div class="logo-text">
+        <span class="logo-name">KrautCraft</span>
+        <span class="logo-tagline">Fermentation Studio</span>
+      </div>
+    </a>
+
+    <!-- Main Nav -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="index.html"   class="nav-link" data-page="home">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="index2.html"  class="nav-link" data-page="home2">Story</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html"   class="nav-link" data-page="about">About</a>
+      </div>
+      <div class="nav-item">
+        <a href="#"            class="nav-link" data-page="workshops">Workshops ▾</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="workshops.html" role="menuitem">All Workshops</a>
+          <a href="workshops.html#beginner"    role="menuitem">Beginner Series</a>
+          <a href="workshops.html#advanced"    role="menuitem">Advanced Ferments</a>
+          <a href="workshops.html#kraut"       role="menuitem">Kraut Masterclass</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="shop.html"    class="nav-link" data-page="shop">Shop</a>
+      </div>
+      <div class="nav-item">
+        <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+
+      <!-- RTL Toggle -->
+      <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z"/>
+        </svg>
+      </button>
+
+      <!-- Theme Toggle -->
+      <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon d-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- Dashboard Icon -->
+      <a href="dashboard-user.html" class="toggle-btn" aria-label="Dashboard">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+
+      <!-- Cart Icon -->
+      <a href="shop.html" class="toggle-btn" aria-label="Shopping cart" style="position:relative;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.99-1.61L23 6H6"/>
+        </svg>
+        <span class="notif-dot" id="cart-dot" style="display:none;"></span>
+      </a>
+
+      <!-- Login CTA -->
+      <a href="login.html" class="btn btn-primary btn-sm hide-mobile">Login</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <div class="mobile-nav-inner">
+    <a href="index.html"     class="mobile-nav-link" data-page="home">🏠 Home</a>
+    <a href="index2.html"    class="mobile-nav-link" data-page="home2">📖 Our Story</a>
+    <a href="about.html"     class="mobile-nav-link" data-page="about">ℹ️ About Us</a>
+    <a href="workshops.html" class="mobile-nav-link" data-page="workshops">🧪 Workshops</a>
+    <a href="shop.html"      class="mobile-nav-link" data-page="shop">🛒 Shop</a>
+    <a href="contact.html"   class="mobile-nav-link" data-page="contact">📬 Contact</a>
+    
+    <div class="mobile-nav-divider"></div>
+    
+    <div class="mobile-nav-actions">
+      <a href="dashboard-user.html" class="mobile-nav-link">👤 My Dashboard</a>
+      <a href="shop.html" class="mobile-nav-link">🛒 View Cart</a>
+      <div class="mobile-nav-divider"></div>
+      <button class="mobile-nav-link" id="mobile-theme-toggle" style="width:100%; text-align:left;">🌓 Toggle Theme</button>
+      <button class="mobile-nav-link" id="mobile-rtl-toggle" style="width:100%; text-align:left;">↔️ Toggle RTL</button>
+    </div>
+
+    <div class="mobile-nav-divider"></div>
+    <a href="login.html"     class="mobile-nav-link">🔐 Login</a>
+    <a href="register.html"  class="mobile-nav-link">✨ Register Free</a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-label="Hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1585944672394-4c58a015c1fb?w=1600&q=80" alt="Fermentation jars with vegetables" class="hero-bg-img" fetchpriority="high">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-badge fade-in" data-reveal>
+      🌿 Craft · Culture · Community
+    </div>
+    <h1 class="hero-title slide-up" data-reveal>
+      Master the Ancient Art<br>of <span class="hero-accent">Fermentation</span>
+    </h1>
+    <p class="hero-subtitle fade-in" data-reveal data-reveal-delay="0.2">
+      From humble sauerkraut to complex kombucha — join 50,000+ food artisans learning to ferment, heal, and nourish with KrautCraft.
+    </p>
+    <div class="hero-cta fade-in" data-reveal>
+      <a href="workshops.html" class="btn btn-primary btn-xl">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Start Your Journey
+      </a>
+      <a href="#how-it-works" class="btn btn-white btn-xl">Watch How It Works</a>
+    </div>
+    <div class="hero-stats" data-reveal>
+      <div class="hero-stat">
+        <span class="hero-stat-value" data-count="50000">0</span>
+        <span class="hero-stat-label">Students</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-value" data-count="120">0</span>
+        <span class="hero-stat-label">Recipes</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-value" data-count="98">0</span>
+        <span class="hero-stat-label">% Satisfaction</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <a href="#features" class="hero-scroll" aria-label="Scroll down">
+    <div class="hero-scroll-mouse"></div>
+  </a>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════════════════════ -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <p class="trust-label">Featured In</p>
+      <div class="trust-logos">
+        <span class="trust-logo">🍃 Food & Ferment</span>
+        <span class="trust-logo">📰 NY Health Mag</span>
+        <span class="trust-logo">🎙 Gut Health Podcast</span>
+        <span class="trust-logo">🏆 Artisan Foods Award</span>
+        <span class="trust-logo">📚 Ferment Weekly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FEATURES SECTION
+══════════════════════════════════════════════════════ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>Why KrautCraft</span>
+      <h2 class="section-title" data-reveal>Everything You Need to <span>Ferment Fearlessly</span></h2>
+      <p class="section-subtitle" data-reveal>A complete learning ecosystem built for beginners and master fermenters alike.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="card-grid">
+      <!-- Feature cards with real images -->
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&q=80" alt="Live Workshops">
+        </div>
+        <h3>Live Workshops</h3>
+        <p class="card-text">Hands-on, small-group sessions with our master fermenters. Online & in-person options available every week.</p>
+        <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Browse Classes</a>
+      </div>
+
+      <div class="feature-card" data-reveal class="reveal-d1">
+        <div class="feature-icon">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80" alt="Video Courses">
+        </div>
+        <h3>Video Courses</h3>
+        <p class="card-text">Over 200+ HD video lessons you can pause, rewind, and follow along at your own pace, forever.</p>
+        <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">View Courses</a>
+      </div>
+
+      <div class="feature-card" data-reveal class="reveal-d2">
+        <div class="feature-icon">
+          <img src="https://images.unsplash.com/photo-1511139088486-9727907de0f6?w=400&q=80" alt="Artisan Shop">
+        </div>
+        <h3>Artisan Shop</h3>
+        <p class="card-text">Handpicked crocks, starter cultures, rare salts, and specialty equipment delivered to your door.</p>
+        <a href="shop.html" class="btn btn-outline btn-sm mt-auto">Shop Now</a>
+      </div>
+
+      <div class="feature-card" data-reveal class="reveal-d3">
+        <div class="feature-icon">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80" alt="Community Forum">
+        </div>
+        <h3>Community Forum</h3>
+        <p class="card-text">Connect with 50,000+ fermenters. Share batches, get feedback, and grow together in a welcoming community.</p>
+        <a href="register.html" class="btn btn-outline btn-sm mt-auto">Join Free</a>
+      </div>
+
+      <div class="feature-card" data-reveal class="reveal-d4">
+        <div class="feature-icon">
+          <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&q=80" alt="Recipe Library">
+        </div>
+        <h3>Recipe Library</h3>
+        <p class="card-text">120+ tested, seasonal recipes from sauerkraut basics to exotic koji ferments with step-by-step guidance.</p>
+        <a href="#" class="btn btn-outline btn-sm mt-auto">Explore Recipes</a>
+      </div>
+
+      <div class="feature-card" data-reveal class="reveal-d5">
+        <div class="feature-icon">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80" alt="Certifications">
+        </div>
+        <h3>Certifications</h3>
+        <p class="card-text">Earn industry-recognized certificates in artisan fermentation, gut health nutrition, and fermented beverage making.</p>
+        <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Get Certified</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     POPULAR WORKSHOPS
+══════════════════════════════════════════════════════ -->
+<section class="section section--alt" id="workshops">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>Learning Paths</span>
+      <h2 class="section-title" data-reveal>Popular <span>Workshops</span></h2>
+      <p class="section-subtitle" data-reveal>Join thousands who have already transformed their kitchens into fermentation labs.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="card-grid" id="workshops-grid">
+      <!-- Cards injected via JS -->
+    </div>
+
+    <div class="text-center" style="margin-top:var(--sp-12);" data-reveal>
+      <a href="workshops.html" class="btn btn-primary btn-lg">View All Workshops</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════════════════ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>Simple Process</span>
+      <h2 class="section-title" data-reveal>How It <span>Works</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="how-grid" data-reveal>
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-icon">📝</div>
+        <h3>Sign Up Free</h3>
+        <p>Create your account in 30 seconds — no credit card required to explore.</p>
+      </div>
+      <div class="how-arrow" aria-hidden="true">→</div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-icon">🎯</div>
+        <h3>Choose a Course</h3>
+        <p>Browse workshops by ferment type, skill level, or your schedule.</p>
+      </div>
+      <div class="how-arrow" aria-hidden="true">→</div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-icon">🧑‍🍳</div>
+        <h3>Learn & Practice</h3>
+        <p>Follow expert video lessons, live sessions, and our guided recipe library.</p>
+      </div>
+      <div class="how-arrow" aria-hidden="true">→</div>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <div class="how-icon">🏅</div>
+        <h3>Get Certified</h3>
+        <p>Complete your curriculum, pass the assessment, and earn your certificate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FEATURED PRODUCTS
+══════════════════════════════════════════════════════ -->
+<section class="section section--alt" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>Artisan Shop</span>
+      <h2 class="section-title" data-reveal>Tools of the <span>Trade</span></h2>
+      <p class="section-subtitle" data-reveal>Premium fermentation supplies, lovingly curated for serious home fermenters.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="card-grid" id="products-grid">
+      <!-- Rendered via JS -->
+    </div>
+
+    <div class="text-center" style="margin-top:var(--sp-12);" data-reveal>
+      <a href="shop.html" class="btn btn-secondary btn-lg">Visit the Shop</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════ -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>Community Voices</span>
+      <h2 class="section-title" data-reveal>What Our Students <span>Say</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonial-carousel" id="testimonial-carousel">
+      <!-- Rendered via JS -->
+    </div>
+    <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Testimonials navigation"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     GALLERY / INSPIRATION
+══════════════════════════════════════════════════════ -->
+<section class="section section--alt" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>From the Studio</span>
+      <h2 class="section-title" data-reveal>Fermentation <span>Gallery</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-masonry" id="gallery-grid">
+      <!-- Rendered via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════════════════ -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-reveal>Membership</span>
+      <h2 class="section-title" data-reveal>Simple, Transparent <span>Pricing</span></h2>
+      <p class="section-subtitle" data-reveal>No hidden fees. Cancel anytime. Start free — upgrade when you're ready.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="pricing-grid" data-reveal>
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Free Forever</div>
+        <h3>Starter</h3>
+        <div class="price price-lg"><span class="price-currency">$</span>0<span class="pricing-period">/mo</span></div>
+        <ul class="pricing-features">
+          <li>✅ 10 free lessons</li>
+          <li>✅ Community access</li>
+          <li>✅ Basic recipe library</li>
+          <li>❌ Live workshops</li>
+          <li>❌ Certifications</li>
+        </ul>
+        <a href="register.html" class="btn btn-outline btn-full">Get Started Free</a>
+      </div>
+      <!-- Pro -->
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-badge pricing-badge--pro">Most Popular</div>
+        <h3>Pro Fermenter</h3>
+        <div class="price price-lg"><span class="price-currency">$</span>19<span class="pricing-period">/mo</span></div>
+        <ul class="pricing-features">
+          <li>✅ All 200+ lessons</li>
+          <li>✅ 2 Live workshops/mo</li>
+          <li>✅ Full recipe library</li>
+          <li>✅ Certificates</li>
+          <li>✅ Priority support</li>
+        </ul>
+        <a href="register.html" class="btn btn-primary btn-full">Start 14-Day Free Trial</a>
+      </div>
+      <!-- Studio -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Best Value</div>
+        <h3>Studio Master</h3>
+        <div class="price price-lg"><span class="price-currency">$</span>39<span class="pricing-period">/mo</span></div>
+        <ul class="pricing-features">
+          <li>✅ Everything in Pro</li>
+          <li>✅ Unlimited live sessions</li>
+          <li>✅ 1-on-1 mentoring</li>
+          <li>✅ 20% shop discount</li>
+          <li>✅ Private Slack group</li>
+        </ul>
+        <a href="register.html" class="btn btn-secondary btn-full">Go Studio Master</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="container cta-banner-content" data-reveal>
+    <h2>Ready to Start <span>Fermenting?</span></h2>
+    <p>Join 50,000+ artisans who've discovered the joy of living foods. Your first class is on us.</p>
+    <div class="hero-cta">
+      <a href="register.html" class="btn btn-white btn-xl">Create Free Account</a>
+      <a href="workshops.html" class="btn btn-outline btn-xl" style="border-color:rgba(255,255,255,0.4);color:#fff;">Browse Workshops</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand Column -->
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="site-logo" style="text-decoration:none;">
+          <div class="logo-mark" aria-hidden="true">🫙</div>
+          <div class="logo-text">
+            <span class="logo-name" style="color:#E8DDD0;">KrautCraft</span>
+            <span class="logo-tagline">Fermentation Studio</span>
+          </div>
+        </a>
+        <p>Your artisan guide to the ancient craft of fermentation. From humble sauerkraut to complex kombucha — we make it accessible, delicious, and deeply nourishing.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Pinterest">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore Links -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <nav class="footer-links" aria-label="Explore links">
+          <a href="index.html">🏠 Home</a>
+          <a href="about.html">ℹ️ About Us</a>
+          <a href="workshops.html">🧪 Workshops</a>
+          <a href="shop.html">🛒 Shop</a>
+          <a href="contact.html">📬 Contact</a>
+        </nav>
+      </div>
+
+      <!-- Learn Links -->
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <nav class="footer-links" aria-label="Learn links">
+          <a href="#">🥬 Sauerkraut Basics</a>
+          <a href="#">🍶 Kombucha Guide</a>
+          <a href="#">🧄 Kimchi Masterclass</a>
+          <a href="#">🥒 Pickle Lab</a>
+          <a href="#">📖 Free Resources</a>
+        </nav>
+      </div>
+
+      <!-- Newsletter & Legal -->
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <p style="font-size:var(--fs-sm);color:#7A6E62;margin-bottom:var(--sp-4);">Get weekly fermentation tips, new recipes & exclusive deals.</p>
+        <div class="footer-newsletter">
+          <div class="newsletter-row">
+            <input type="email" class="form-control" placeholder="Your email..." id="footer-email" aria-label="Email for newsletter">
+            <button class="btn btn-primary btn-sm" id="footer-subscribe-btn" aria-label="Subscribe to newsletter">→</button>
+          </div>
+        </div>
+        <p style="font-size:var(--fs-xs);color:#5A4E44;margin-top:var(--sp-3);">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>© <span id="footer-year"></span> KrautCraft Fermentation Studio. All rights reserved.</p>
+      <nav class="footer-bottom-links" aria-label="Legal links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+        <a href="#">Accessibility</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set footer year dynamically
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  // Newsletter quick handler
+  document.getElementById('footer-subscribe-btn')?.addEventListener('click', function() {
+    const email = document.getElementById('footer-email').value.trim();
+    if (email && email.includes('@')) {
+      if (window.showToast) showToast('success', '🎉 You\'re subscribed!', 'Welcome to the fermentation community!');
+      document.getElementById('footer-email').value = '';
+    } else {
+      if (window.showToast) showToast('error', 'Invalid email', 'Please enter a valid email address.');
+    }
+  });
+</script>
+
+
+<!-- Toast Container -->
+<div id="toast-container" role="alert" aria-live="polite"></div>
+
+</body>
+</html>

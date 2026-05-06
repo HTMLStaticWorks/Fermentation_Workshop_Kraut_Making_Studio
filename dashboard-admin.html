@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | KrautCraft</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body class="dash-body">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar" id="dash-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo-mark">🫙</div>
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-name">KrautCraft Admin</div>
+        <div class="sidebar-brand-sub">Management Suite</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Intelligence</div>
+      <a href="index.html" class="sidebar-link">
+        <span class="sidebar-icon">🏠</span> Main Home
+      </a>
+      <a href="index2.html" class="sidebar-link">
+        <span class="sidebar-icon">📖</span> Our Story
+      </a>
+      <a href="#" class="sidebar-link active" data-tab="overview">
+        <span class="sidebar-icon">📊</span> Statistics
+      </a>
+      <a href="#" class="sidebar-link" data-tab="reports">
+        <span class="sidebar-icon">📈</span> Reports & Analytics
+      </a>
+
+      <div class="sidebar-section-label">Management</div>
+      <a href="#" class="sidebar-link" data-tab="users">
+        <span class="sidebar-icon">👥</span> User Management
+      </a>
+      <a href="#" class="sidebar-link" data-tab="content">
+        <span class="sidebar-icon">📚</span> Content Control
+      </a>
+      <a href="#" class="sidebar-link" data-tab="orders">
+        <span class="sidebar-icon">🛒</span> Orders & Bookings
+      </a>
+      
+      <div class="sidebar-section-label">System</div>
+      <a href="#" class="sidebar-link" data-tab="notifs">
+        <span class="sidebar-icon">🔔</span> Notifications <span class="sidebar-badge">12</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tab="settings">
+        <span class="sidebar-icon">⚙️</span> Configuration
+      </a>
+      <a href="login.html" class="sidebar-link mt-auto" style="color:var(--clr-danger);">
+        <span class="sidebar-icon">🚪</span> Logout
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" class="avatar avatar-sm" alt="Admin Avatar">
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Admin Keller</div>
+          <div class="sidebar-user-role">System Architect</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dash-main">
+    
+    <!-- TOP BAR -->
+    <header class="dash-topbar">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+      <h2 class="dash-topbar-title">Global Overview</h2>
+      <div class="topbar-spacer"></div>
+      
+      <div class="topbar-search">
+        <span class="topbar-search-icon">🔍</span>
+        <input type="text" class="form-control" placeholder="Search system...">
+      </div>
+
+      <div class="topbar-actions">
+        <button class="notif-btn" aria-label="Alerts">
+          🔔 <span class="notif-dot"></span>
+        </button>
+        <div class="topbar-avatar-wrap" aria-label="Admin Profile">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" class="avatar avatar-sm" alt="Profile">
+          <span class="hide-mobile">Marcus (Admin)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- DASHBOARD CONTENT -->
+    <div class="dash-content">
+      
+      <!-- OVERVIEW PANEL -->
+      <section class="dash-panel active" id="panel-overview">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label">Total Revenue</span>
+            <span class="metric-value">$84.2k</span>
+            <span class="metric-delta up">+12% vs last mo</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">New Students</span>
+            <span class="metric-value">1.2k</span>
+            <span class="metric-delta up">+18.5% growth</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Pending Orders</span>
+            <span class="metric-value">48</span>
+            <span class="metric-delta down">7 urgent</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Active Workshops</span>
+            <span class="metric-value">124</span>
+            <span class="metric-delta up">3 currently live</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- SALES CHART -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+                <h3 class="chart-card-title">Revenue Forecast</h3>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-ghost btn-sm">7 Days</button>
+                    <button class="btn btn-outline btn-sm">30 Days</button>
+                </div>
+            </div>
+            <div class="chart-placeholder">
+                <div class="bar" style="height:30%;"></div>
+                <div class="bar" style="height:45%;"></div>
+                <div class="bar" style="height:60%;"></div>
+                <div class="bar" style="height:55%;"></div>
+                <div class="bar" style="height:80%;"></div>
+                <div class="bar" style="height:75%;"></div>
+                <div class="bar" style="height:95%;"></div>
+                <div class="bar" style="height:90%;"></div>
+            </div>
+          </div>
+
+          <!-- RECENT USERS -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+                <h3 class="chart-card-title">Latest Registrations</h3>
+                <a href="#" class="btn btn-ghost btn-sm">Manage All</a>
+            </div>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex align-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" class="avatar avatar-sm">
+                                <div><strong>Mike S.</strong><div class="fs-xs text-muted">mike@test.com</div></div>
+                            </td>
+                            <td><span class="badge badge-primary">Student</span></td>
+                            <td><button class="btn btn-ghost btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <td class="d-flex align-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" class="avatar avatar-sm">
+                                <div><strong>Elena R.</strong><div class="fs-xs text-muted">elena@web.com</div></div>
+                            </td>
+                            <td><span class="badge badge-secondary">Pro</span></td>
+                            <td><button class="btn btn-ghost btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <td class="d-flex align-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" class="avatar avatar-sm">
+                                <div><strong>Tom K.</strong><div class="fs-xs text-muted">tom@dev.io</div></div>
+                            </td>
+                            <td><span class="badge badge-primary">Student</span></td>
+                            <td><button class="btn btn-ghost btn-sm">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MANAGEMENT PANELS (PLACEHOLDERS) -->
+      <section class="dash-panel" id="panel-users">
+          <div class="dash-section-head">
+              <h2>User Management</h2>
+              <button class="btn btn-primary btn-sm">+ Add New User</button>
+          </div>
+          <div class="card p-8">
+              <p class="text-muted">User management table and filtering logic would go here.</p>
+          </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="toast-container"></div>
+</body>
+</html>

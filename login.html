@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | KrautCraft Fermentation Studio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--clr-bg-alt);
+      padding: var(--sp-6);
+      position: relative;
+    }
+    .auth-toggles {
+      position: absolute;
+      top: var(--sp-6);
+      right: var(--sp-6);
+      display: flex;
+      gap: var(--sp-2);
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--clr-surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: var(--sp-10);
+      text-align: center;
+    }
+    .auth-logo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-10);
+      text-decoration: none;
+    }
+    .auth-logo .logo-mark { font-size: 4rem; line-height: 1; }
+    .auth-logo .logo-name { font-size: 2.25rem; color: var(--clr-text); font-weight: var(--fw-black); }
+    .auth-logo .logo-tagline { font-size: var(--fs-xs); color: var(--clr-primary); letter-spacing: 0.2em; text-transform: uppercase; }
+    
+    .auth-card h2 {
+      font-size: var(--fs-md);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--sp-2);
+      color: var(--clr-text);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .social-btns {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      margin-top: var(--sp-8);
+    }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-3);
+      width: 100%;
+      padding: 0.75rem;
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--clr-text);
+      font-weight: var(--fw-semi);
+      font-size: var(--fs-sm);
+      transition: background var(--trans-fast);
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--clr-bg-alt); }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      margin: var(--sp-8) 0;
+      color: var(--clr-text-light);
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--clr-border);
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-toggles">
+    <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+  </div>
+
+  <div class="auth-card">
+    <a href="index.html" class="auth-logo">
+      <div class="logo-mark">🫙</div>
+      <div class="logo-name">KrautCraft</div>
+      <div class="logo-tagline">Fermentation Studio</div>
+    </a>
+
+    <h2>Welcome Back</h2>
+    <p class="text-muted fs-sm mb-8">Sign in to continue your fermentation journey.</p>
+
+    <form id="login-form">
+      <div class="form-group" style="text-align:left;">
+        <label class="form-label" for="email">Email Address</label>
+        <div class="input-wrap">
+          <span class="input-icon">📧</span>
+          <input type="email" id="email" class="form-control" placeholder="jane@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group" style="text-align:left;">
+        <label class="form-label" for="password">Password</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+          <button type="button" class="pw-toggle" aria-label="Show password">👁️</button>
+        </div>
+      </div>
+
+      <div class="d-flex align-center justify-between mb-8">
+        <label class="checkbox-wrap">
+          <input type="checkbox">
+          <span class="fs-sm">Remember Me</span>
+        </label>
+        <a href="#" class="fs-sm">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-full" id="login-btn">Sign In</button>
+    </form>
+
+    <div class="auth-divider">Or continue with</div>
+
+    <div class="social-btns">
+      <button class="social-btn"><span>G</span> Continue with Google</button>
+      <button class="social-btn"><span>A</span> Continue with Apple</button>
+    </div>
+
+    <p class="fs-sm mt-8 text-muted">Don't have an account? <a href="register.html">Sign up free</a></p>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<script>
+$(document).ready(function() {
+    $('#login-form').on('submit', function(e) {
+        e.preventDefault();
+        const $btn = $('#login-btn');
+        $btn.html('Checking...').prop('disabled', true);
+        
+        setTimeout(() => {
+            window.showToast('success', 'Success!', 'Welcome back, Artisan! Redirecting...');
+            setTimeout(() => window.location.href = 'dashboard-user.html', 1000);
+        }, 1200);
+    });
+});
+</script>
+</body>
+</html>
