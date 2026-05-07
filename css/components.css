@@ -191,7 +191,7 @@
   padding: var(--sp-6);
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-4); /* Increased gap */
   flex: 1;
   align-items: center;
   text-align: center;
@@ -211,6 +211,7 @@
   font-size: var(--fs-sm);
   text-align: center;
   flex: 1;
+  line-height: 1.6;
 }
 
 .card-meta {
@@ -219,9 +220,13 @@
   gap: var(--sp-4);
   flex-wrap: wrap;
   justify-content: center;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-1);
 }
+.card-meta span { display: flex; align-items: center; gap: 4px; }
 
 .card-footer {
   padding: var(--sp-4) var(--sp-6);
@@ -255,8 +260,8 @@
   width: 84px; height: 84px;
   border-radius: 50%;
   background: var(--clr-surface-alt);
-  border: 4px solid #fff;
-  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--clr-border);
+  box-shadow: var(--shadow-sm);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
@@ -408,22 +413,48 @@
 /* ============================================================
    GRID LAYOUTS
    ============================================================ */
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+.grid-2, .grid-3, .grid-4 { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: stretch; /* Ensure equal height */
+  gap: var(--sp-6); 
+}
+.grid-2 > * { width: calc(50% - var(--sp-3)); }
+.grid-3 > * { width: calc(33.333% - var(--sp-4)); }
+.grid-4 > * { width: calc(25% - var(--sp-4)); }
+
+@media (max-width: 1024px) {
+  .grid-2 > *, .grid-3 > *, .grid-4 > * { 
+    width: calc(50% - var(--sp-4)); 
+  }
+}
+@media (max-width: 640px) {
+  .grid-2 > *, .grid-3 > *, .grid-4 > * { 
+    width: 100%; 
+  }
+}
 
 /* Equal-height card grids */
 .card-grid {
-  display: grid;
-  gap: var(--sp-6);
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex; /* Changed to flex for centering last row */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-8);
   align-items: stretch;
 }
-.card-grid .card { height: 100%; }
+.card-grid > * { 
+  flex: 1 1 320px; /* Allow growing to fill row */
+  max-width: 400px; /* Prevent excessive stretching */
+  display: flex;
+}
+.card-grid .card { width: 100%; height: 100%; }
 
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  /* Enforce flex centering over fixed grid layouts */
+  .grid-3, .grid-4 {
+    justify-content: center !important;
+  }
 }
 @media (max-width: 640px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
@@ -582,23 +613,127 @@
 .avatar-xl2 { width: 128px; height: 128px; }
 
 /* ============================================================
-   PRICE
+   PRICE & RATING
    ============================================================ */
 .price {
   font-family: var(--font-heading);
   font-weight: var(--fw-black);
   color: var(--clr-primary-dark);
+  font-size: var(--fs-2xl); /* Larger price */
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  margin-top: var(--sp-1);
 }
-.price-currency { font-size: 0.65em; vertical-align: super; }
+.price-currency { font-size: 0.6em; margin-right: 1px; color: var(--clr-primary); }
 .price-old {
-  font-size: var(--fs-sm);
+  font-size: 0.65em;
   color: var(--clr-text-light);
   text-decoration: line-through;
   margin-left: var(--sp-2);
+  font-weight: var(--fw-medium);
 }
 .price-lg { font-size: var(--fs-3xl); }
 
+.card-rating-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  margin-bottom: var(--sp-1);
+  min-height: 20px; /* Ensure consistent height */
+}
+.stars { color: #f59e0b; letter-spacing: 1px; }
+.stars { color: var(--clr-accent); font-size: 0.9rem; letter-spacing: 1px; }
+
 /* ============================================================
-   STAR RATING
+   STAR RATING & PRICE
    ============================================================ */
-.stars { color: var(--clr-accent); font-size: var(--fs-sm); letter-spacing: 2px; }
+.stars { color: #D4A853; font-size: var(--fs-md); letter-spacing: 2px; }
+.card-rating-wrap { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--clr-text-light); }
+
+.price {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.price-currency { font-size: 0.6em; color: var(--clr-text-light); margin-right: 1px; }
+.price-old { font-size: 0.5em; text-decoration: line-through; color: var(--clr-text-light); margin-left: var(--sp-2); font-weight: var(--fw-normal); }
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+#back-to-top {
+  position: fixed;
+  bottom: var(--sp-6);
+  right: var(--sp-6);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: 
+    opacity var(--trans-base), 
+    visibility var(--trans-base), 
+    transform var(--trans-base),
+    background var(--trans-base),
+    box-shadow var(--trans-base);
+  box-shadow: var(--shadow-md);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: var(--clr-primary-dark);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+#back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  transition: transform var(--trans-base);
+}
+
+#back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+[dir="rtl"] #back-to-top {
+  right: auto;
+  left: var(--sp-6);
+}
+
+@media (max-width: 768px) {
+  #back-to-top {
+    bottom: var(--sp-4);
+    right: var(--sp-4);
+    width: 42px;
+    height: 42px;
+  }
+  [dir="rtl"] #back-to-top {
+    right: auto;
+    left: var(--sp-4);
+  }
+}

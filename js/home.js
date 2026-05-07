@@ -130,7 +130,7 @@
     { img: 'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?w=500&q=80', label: 'Fresh Kraut' },
     { img: 'https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?w=500&q=80', label: 'Kombucha SCOBY' },
     { img: 'https://images.unsplash.com/photo-1584285405429-136bf988919c?w=500&q=80', label: 'Ferment Lab' },
-    { img: 'https://images.unsplash.com/photo-1517171738882-b1cad5e7c9a2?w=500&q=80', label: 'Pickle Jars' },
+    { img: 'https://rukminim2.flixcart.com/image/480/640/xif0q/container/p/u/9/ceramic-jars-1000ml-brown-kutting-jar-hc-the-crafts-original-imagxjv7dvfsxcye.jpeg?q=90', label: 'Pickle Jars' },
     { img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80', label: 'Live Workshop' },
     { img: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=500&q=80', label: 'Miso Ceremony' },
     { img: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?w=500&q=80', label: 'Studio Harvest' }
@@ -155,11 +155,17 @@
         <div class="card-body">
           <h3 class="card-title">${w.title}</h3>
           <p class="card-text">${w.desc}</p>
+          
+          <div class="card-rating-wrap">
+            <span class="stars">${stars(w.rating)}</span>
+            <span>(${w.reviews} reviews)</span>
+          </div>
+
           <div class="card-meta">
-            <span title="Rating"><span class="stars">${stars(w.rating)}</span> (${w.reviews})</span>
             <span>⏱ ${w.duration}</span>
             <span>📊 ${w.level}</span>
           </div>
+
           <div class="price">
             <span class="price-currency">$</span>${w.price}
             ${w.oldPrice ? `<span class="price-old">$${w.oldPrice}</span>` : ''}
@@ -184,7 +190,9 @@
         <div class="card-body">
           <h3 class="card-title">${p.title}</h3>
           <p class="card-text">${p.desc}</p>
-          <div class="stars">${stars(p.rating)}</div>
+          <div class="card-rating-wrap">
+            <span class="stars">${stars(p.rating)}</span>
+          </div>
           <div class="price"><span class="price-currency">$</span>${p.price}</div>
           <button class="btn btn-secondary btn-sm mt-auto" onclick="window.showToast('success','Added!','${p.title} added to your cart. 🛒')">Add to Cart</button>
         </div>
@@ -202,7 +210,7 @@
     if (!$carousel.length) return;
 
     $carousel.html(testimonials.map((t, i) => `
-      <div class="testimonial-slide ${i === 0 ? 'active' : ''}" role="tabpanel" aria-label="Testimonial ${i+1}">
+      <div class="testimonial-slide ${i === 0 ? 'active' : ''}" role="tabpanel" aria-label="Testimonial ${i + 1}">
         <blockquote class="testimonial-quote">${t.quote}</blockquote>
         <div class="testimonial-author">
           <img src="${t.img}" alt="${t.name}" loading="lazy">
@@ -215,7 +223,7 @@
     `).join(''));
 
     $dots.html(testimonials.map((_, i) => `
-      <button class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}" role="tab" aria-label="Slide ${i+1}" aria-selected="${i === 0}"></button>
+      <button class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}" role="tab" aria-label="Slide ${i + 1}" aria-selected="${i === 0}"></button>
     `).join(''));
 
     startCarousel();

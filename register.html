@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join the Studio | KrautCraft Fermentation Studio</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -18,6 +20,7 @@
       padding: var(--sp-6);
       position: relative;
     }
+
     .auth-toggles {
       position: absolute;
       top: var(--sp-6);
@@ -25,6 +28,7 @@
       display: flex;
       gap: var(--sp-2);
     }
+
     .auth-card {
       width: 100%;
       max-width: 480px;
@@ -34,6 +38,7 @@
       padding: var(--sp-10);
       text-align: center;
     }
+
     .auth-logo {
       display: inline-flex;
       align-items: center;
@@ -41,10 +46,28 @@
       margin-bottom: var(--sp-10);
       text-decoration: none;
     }
-    .auth-logo .logo-mark { font-size: 3.5rem; line-height: 1; }
-    .auth-logo .logo-name { font-size: 2rem; color: var(--clr-text); font-weight: var(--fw-black); line-height: 1; }
-    .auth-logo .logo-tagline { font-size: var(--fs-xs); color: var(--clr-primary); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-top: 2px; }
-    
+
+    .auth-logo .logo-mark {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    .auth-logo .logo-name {
+      font-size: 2rem;
+      color: var(--clr-text);
+      font-weight: var(--fw-black);
+      line-height: 1;
+    }
+
+    .auth-logo .logo-tagline {
+      font-size: var(--fs-xs);
+      color: var(--clr-primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 2px;
+    }
+
     .auth-card h2 {
       font-size: var(--fs-md);
       font-weight: var(--fw-bold);
@@ -53,11 +76,13 @@
       text-transform: none;
       letter-spacing: normal;
     }
+
     .social-btns {
       display: flex;
       gap: var(--sp-3);
       margin-top: var(--sp-8);
     }
+
     .social-btn {
       flex: 1;
       display: flex;
@@ -74,7 +99,11 @@
       transition: background var(--trans-fast);
       cursor: pointer;
     }
-    .social-btn:hover { background: var(--clr-bg-alt); }
+
+    .social-btn:hover {
+      background: var(--clr-bg-alt);
+    }
+
     .auth-divider {
       display: flex;
       align-items: center;
@@ -85,7 +114,9 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    .auth-divider::before, .auth-divider::after {
+
+    .auth-divider::before,
+    .auth-divider::after {
       content: '';
       flex: 1;
       height: 1px;
@@ -95,92 +126,122 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
-<div class="auth-page">
-  <div class="auth-toggles">
-    <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
-    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
-  </div>
-
-  <div class="auth-card">
-    <a href="index.html" class="auth-logo">
-      <div class="logo-mark">🫙</div>
-      <div class="logo-text" style="text-align:left;">
-        <span class="logo-name">KrautCraft</span>
-        <span class="logo-tagline">Fermentation Studio</span>
-      </div>
-    </a>
-
-    <h2>Start Fermenting Today</h2>
-    <p class="text-muted fs-sm mb-8">Join 50,000+ artisans learning the craft.</p>
-
-    <form id="register-form">
-      <div class="grid-2" style="text-align:left;">
-        <div class="form-group">
-          <label class="form-label" for="fname">First Name</label>
-          <input type="text" id="fname" class="form-control" placeholder="Jane" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="lname">Last Name</label>
-          <input type="text" id="lname" class="form-control" placeholder="Doe" required>
-        </div>
-      </div>
-
-      <div class="form-group" style="text-align:left;">
-        <label class="form-label" for="email">Email Address</label>
-        <div class="input-wrap">
-          <span class="input-icon">📧</span>
-          <input type="email" id="email" class="form-control" placeholder="jane@example.com" required>
-        </div>
-      </div>
-
-      <div class="form-group" style="text-align:left;">
-        <label class="form-label" for="password">Create Password</label>
-        <div class="input-wrap">
-          <span class="input-icon">🔒</span>
-          <input type="password" id="password" class="form-control" placeholder="Min 8 characters" required>
-          <button type="button" class="pw-toggle" aria-label="Show password">👁️</button>
-        </div>
-        <span class="form-hint">Use at least 8 characters with letters & numbers.</span>
-      </div>
-
-      <div class="mb-8" style="text-align:left;">
-        <label class="checkbox-wrap">
-          <input type="checkbox" required>
-          <span class="fs-xs">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
-        </label>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-lg btn-full" id="register-btn">Create Account</button>
-    </form>
-
-    <div class="auth-divider">Or join with</div>
-
-    <div class="social-btns">
-      <button class="social-btn">Google</button>
-      <button class="social-btn">Apple</button>
-      <button class="social-btn">Facebook</button>
+  <div class="auth-page">
+    <div class="auth-toggles">
+      <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
+        </svg>
+      </button>
+      <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon-moon d-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+      </button>
     </div>
 
-    <p class="fs-sm mt-8 text-muted">Already have an account? <a href="login.html">Sign in</a></p>
+    <div class="auth-card">
+      <a href="index.html" class="auth-logo">
+        <div class="logo-mark">🫙</div>
+        <div class="logo-text" style="text-align:left;">
+          <span class="logo-name">KrautCraft</span>
+          <span class="logo-tagline">Fermentation Studio</span>
+        </div>
+      </a>
+
+      <h2>Start Fermenting Today</h2>
+      <p class="text-muted fs-sm mb-8">Join 50,000+ artisans learning the craft.</p>
+
+      <form id="register-form">
+        <div class="form-group" style="text-align:left;">
+          <label class="form-label" for="fname">First Name</label>
+          <input type="text" id="fname" class="form-control" placeholder="Your first name" required>
+        </div>
+        <div class="form-group" style="text-align:left;">
+          <label class="form-label" for="lname">Last Name</label>
+          <input type="text" id="lname" class="form-control" placeholder="Your last name" required>
+        </div>
+
+        <div class="form-group" style="text-align:left;">
+          <label class="form-label" for="email">Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon">📧</span>
+            <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="text-align:left;">
+          <label class="form-label" for="password">Create Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+            <button type="button" class="pw-toggle" aria-label="Show password">👁️</button>
+          </div>
+          <span class="form-hint">Use at least 8 characters with letters & numbers.</span>
+        </div>
+
+        <div class="form-group" style="text-align:left;">
+          <label class="form-label" for="confirm-password">Confirm Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="confirm-password" class="form-control" placeholder="Confirm your password"
+              required>
+          </div>
+        </div>
+
+        <div class="mb-8" style="text-align:left;">
+          <label class="checkbox-wrap">
+            <input type="checkbox" required>
+            <span class="fs-xs">I agree to the <a href="#">Terms and <a href="#" />conditions</a>.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-full" id="register-btn">Create Account</button>
+      </form>
+
+      <div class="auth-divider">Or join with</div>
+
+      <div class="social-btns">
+        <button class="social-btn">Google</button>
+        <button class="social-btn">Apple</button>
+        <button class="social-btn">Facebook</button>
+      </div>
+
+      <p class="fs-sm mt-8 text-muted">Already have an account? <a href="login.html">Sign in</a></p>
+    </div>
   </div>
-</div>
 
-<div id="toast-container"></div>
+  <div id="toast-container"></div>
 
-<script>
-$(document).ready(function() {
-    $('#register-form').on('submit', function(e) {
+  <script>
+    $(document).ready(function () {
+      $('#register-form').on('submit', function (e) {
         e.preventDefault();
         const $btn = $('#register-btn');
         $btn.html('Creating Account...').prop('disabled', true);
-        
+
         setTimeout(() => {
-            window.showToast('success', 'Welcome, Artisan!', 'Account created successfully. Redirecting...');
-            setTimeout(() => window.location.href = 'dashboard-user.html', 1500);
+          window.showToast('success', 'Welcome, Artisan!', 'Account created successfully. Redirecting...');
+          setTimeout(() => window.location.href = 'dashboard-user.html', 1500);
         }, 1200);
+      });
     });
-});
-</script>
+  </script>
 </body>
+
 </html>

@@ -105,6 +105,9 @@
     });
     // Close on nav link click
     $(document).off('click', '.mobile-nav-link').on('click', '.mobile-nav-link', function () {
+      // Don't close if clicking a button (Theme/RTL toggles)
+      if ($(this).is('button')) return;
+      
       $('#hamburger').removeClass('open').attr('aria-expanded', false);
       $('#mobile-nav').removeClass('open');
     });
@@ -266,7 +269,30 @@
   }
 
   /* ──────────────────────────────────────────────────────────
-     15. INIT
+     15. BACK TO TOP
+  ────────────────────────────────────────────────────────── */
+  const BackToTop = {
+    init() {
+      const $btn = $(`
+        <button id="back-to-top" aria-label="Back to Top" title="Back to Top">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      `).appendTo('body');
+
+      $(window).on('scroll.backToTop', () => {
+        $btn.toggleClass('visible', window.scrollY > 300);
+      });
+
+      $btn.on('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  };
+
+  /* ──────────────────────────────────────────────────────────
+     16. INIT
   ────────────────────────────────────────────────────────── */
   function init() {
     ThemeManager.init();
@@ -274,6 +300,7 @@
     bindHamburger();
     bindHeaderScroll();
     setActiveNav();
+    BackToTop.init();
     ScrollReveal.init();
     hidePageLoader();
   }

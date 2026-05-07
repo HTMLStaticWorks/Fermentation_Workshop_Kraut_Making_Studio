@@ -117,7 +117,16 @@ button { cursor: pointer; border: none; background: none; }
   color: var(--clr-text-muted);
   margin-bottom: var(--sp-12);
 }
-.section-header { text-align: center; margin-bottom: var(--sp-12); }
+.section-header { 
+  text-align: center; 
+  margin-bottom: var(--sp-12); 
+  padding-inline: var(--sp-4);
+}
+
+@media (max-width: 640px) {
+  .section-header { padding-inline: var(--sp-2); }
+  .section-title { font-size: 1.5rem; }
+}
 
 /* ─── Divider ─── */
 .divider {
@@ -214,6 +223,7 @@ button { cursor: pointer; border: none; background: none; }
 .gap-4       { gap: var(--sp-4); }
 .flex-wrap   { flex-wrap: wrap; }
 .justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
 
 .rounded     { border-radius: var(--radius-md); }
 .rounded-lg  { border-radius: var(--radius-lg); }

@@ -39,13 +39,19 @@
         <div class="card-body">
           <h3 class="card-title">${w.title}</h3>
           <p class="card-text">${w.desc}</p>
+
+          <div class="card-rating-wrap">
+            <span class="stars">${stars(w.rating)}</span>
+            <span>(${w.reviews} reviews)</span>
+          </div>
+
           <div class="card-meta">
-            <span><span class="stars">${stars(w.rating)}</span> (${w.reviews})</span>
             <span>⏱ ${w.duration}</span>
             <span>📊 ${w.level}</span>
           </div>
+
           <div class="price">
-            ${w.price === 0 ? '<span style="color:var(--clr-success);font-weight:700;">FREE</span>' : `<span class="price-currency">$</span>${w.price}${w.oldPrice ? `<span class="price-old">$${w.oldPrice}</span>` : ''}`}
+            ${w.price === 0 ? '<span style="color:var(--clr-success);font-weight:700;font-size:0.9em;">FREE</span>' : `<span class="price-currency">$</span>${w.price}${w.oldPrice ? `<span class="price-old">$${w.oldPrice}</span>` : ''}`}
           </div>
           <a href="register.html" class="btn btn-primary btn-sm mt-auto">Enroll Now</a>
         </div>
