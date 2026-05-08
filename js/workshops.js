@@ -14,7 +14,7 @@
     { img:'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&q=80', badge:'Bundle', title:'The Complete Pickle Lab', desc:'Lacto-fermented pickles, half-sours, dilly beans, pickled eggs and international brine traditions.', rating:4, reviews:458, price:89, oldPrice:120, duration:'10 hrs', level:'Beginner+', tag:'pickles' },
     { img:'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80', badge:'Live', title:'Live Sauerkraut Sunday', desc:'Weekly live session — make kraut together, ask questions, and share your batch results.', rating:5, reviews:198, price:29, oldPrice:null, duration:'2 hrs', level:'All Levels', tag:'live' },
     { img:'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?w=600&q=80', badge:'Beginner', title:'Fermentation 101', desc:'The ultimate introduction — what fermentation is, why it matters, and how to start safely at home.', rating:5, reviews:1204, price:0, oldPrice:null, duration:'3 hrs', level:'Beginner', tag:'beginner' },
-    { img:'https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?w=600&q=80', badge:'Advanced', title:'Miso & Amazake', desc:'Traditional Japanese koji ferments. Make shiro miso, hatcho miso, and sweet amazake from scratch.', rating:5, reviews:165, price:99, oldPrice:130, duration:'10 hrs', level:'Advanced', tag:'advanced' },
+    { img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6-F7GV_5VQ5sgXTQ-j055qPvzIbsv7-CQw&s', badge:'Advanced', title:'Miso & Amazake', desc:'Traditional Japanese koji ferments. Make shiro miso, hatcho miso, and sweet amazake from scratch.', rating:5, reviews:165, price:99, oldPrice:130, duration:'10 hrs', level:'Advanced', tag:'advanced' },
   ];
 
   function stars(n) {

@@ -211,6 +211,27 @@
   background: var(--clr-bg-alt);
   color: var(--clr-primary);
 }
+.mobile-nav-sub {
+  padding-left: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin-top: calc(var(--sp-2) * -1);
+  margin-bottom: var(--sp-2);
+}
+.mobile-nav-sub a {
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--trans-fast);
+}
+.mobile-nav-sub a:hover {
+  background: var(--clr-bg-alt);
+  color: var(--clr-primary);
+  padding-left: var(--sp-6);
+}
 .mobile-nav-divider { height: 1px; background: var(--clr-border); margin-block: var(--sp-2); }
 
 /* Tablet View (769px to 1024px) */

@@ -54,6 +54,30 @@
       desc: 'Lacto-fermented pickles, half-sours, dilly beans, pickled eggs and international brine traditions.',
       rating: 4, reviews: 458, price: 89, oldPrice: 120,
       duration: '10 hrs', level: 'Beginner+', tag: 'pickles'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80',
+      badge: 'Live',
+      title: 'Live Sauerkraut Sunday',
+      desc: 'Weekly live session — make kraut together, ask questions, and share your batch results.',
+      rating: 5, reviews: 198, price: 29, oldPrice: null,
+      duration: '2 hrs', level: 'All Levels', tag: 'live'
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?w=600&q=80',
+      badge: 'Beginner',
+      title: 'Fermentation 101',
+      desc: 'The ultimate introduction — what fermentation is, why it matters, and how to start safely at home.',
+      rating: 5, reviews: 1204, price: 0, oldPrice: null,
+      duration: '3 hrs', level: 'Beginner', tag: 'beginner'
+    },
+    {
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6-F7GV_5VQ5sgXTQ-j055qPvzIbsv7-CQw&s',
+      badge: 'Advanced',
+      title: 'Miso & Amazake',
+      desc: 'Traditional Japanese koji ferments. Make shiro miso, hatcho miso, and sweet amazake from scratch.',
+      rating: 5, reviews: 165, price: 99, oldPrice: 130,
+      duration: '10 hrs', level: 'Advanced', tag: 'koji'
     }
   ];
 
@@ -87,14 +111,14 @@
       price: 32, rating: 4
     },
     {
-      img: 'https://images.unsplash.com/photo-1584271854089-9bb3e5168e32?w=600&q=80',
+      img: 'https://countrytradingco.com.au/cdn/shop/products/ferementing-glass-weights_600x.jpg?v=1655161657',
       badge: 'Essential',
       title: 'Glass Fermentation Weights',
       desc: 'Keep your vegetables safely submerged under the brine. Fits all wide-mouth jars perfectly.',
       price: 14, rating: 5
     },
     {
-      img: 'https://images.unsplash.com/photo-1591871937573-74dbba515c4c?w=600&q=80',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyiqLyDR2sDRLtNckrlXs6X0SXJCPoVzb4sQ&s',
       badge: 'Professional',
       title: 'Stainless Steel Kraut Slicer',
       desc: 'Ultra-sharp triple blade for the perfect fine-shred cabbage. Built for speed and lifetime durability.',
@@ -167,8 +191,7 @@
           </div>
 
           <div class="price">
-            <span class="price-currency">$</span>${w.price}
-            ${w.oldPrice ? `<span class="price-old">$${w.oldPrice}</span>` : ''}
+            ${w.price === 0 ? '<span style="color:var(--clr-success);font-weight:700;font-size:0.9em;">FREE</span>' : `<span class="price-currency">$</span>${w.price}${w.oldPrice ? `<span class="price-old">$${w.oldPrice}</span>` : ''}`}
           </div>
           <a href="workshops.html" class="btn btn-primary btn-sm mt-auto">Enroll Now</a>
         </div>

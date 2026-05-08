@@ -24,7 +24,7 @@
       <div class="sidebar-logo-mark">🫙</div>
       <div class="sidebar-brand">
         <div class="sidebar-brand-name">KrautCraft</div>
-        <div class="sidebar-brand-sub">Fermentation Studio</div>
+        <div class="sidebar-brand-sub">FERMENTATION STUDIO</div>
       </div>
     </div>
 
@@ -36,19 +36,10 @@
       <a href="index2.html" class="sidebar-link">
         <span class="sidebar-icon">📖</span> Our Story
       </a>
-      <a href="#" class="sidebar-link active" data-tab="overview">
-        <span class="sidebar-icon">📊</span> Statistics
-      </a>
-      <a href="#" class="sidebar-link" data-tab="reports">
-        <span class="sidebar-icon">📈</span> Reports & Analytics
-      </a>
-
+      
       <div class="sidebar-section-label">Management</div>
       <a href="#" class="sidebar-link" data-tab="users">
         <span class="sidebar-icon">👥</span> User Management
-      </a>
-      <a href="#" class="sidebar-link" data-tab="content">
-        <span class="sidebar-icon">📚</span> Content Control
       </a>
       <a href="#" class="sidebar-link" data-tab="orders">
         <span class="sidebar-icon">🛒</span> Orders & Bookings
@@ -62,7 +53,7 @@
         <span class="sidebar-icon">⚙️</span> Configuration
       </a>
       <div class="sidebar-footer">
-        <a href="login.html" class="sidebar-link" style="color:var(--clr-danger); padding: var(--sp-4);">
+        <a href="index.html" class="sidebar-link" style="color:var(--clr-danger); padding: var(--sp-4);">
           <span class="sidebar-icon">🚪</span> Logout
         </a>
       </div>
@@ -83,29 +74,6 @@
       </div>
 
       <div class="topbar-actions">
-        <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
-          </svg>
-        </button>
-        <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
-          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-          <svg class="icon-moon d-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-        </button>
         <button class="notif-btn" aria-label="Alerts">
           🔔 <span class="notif-dot"></span>
         </button>
@@ -114,155 +82,182 @@
             alt="Profile">
           <span class="hide-mobile">Admin</span>
         </div>
+
+        <div class="d-flex gap-2 ms-2">
+          <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
+            </svg>
+          </button>
+          <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon d-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
     <!-- DASHBOARD CONTENT -->
     <div class="dash-content">
 
-      <!-- OVERVIEW PANEL -->
       <section class="dash-panel active" id="panel-overview">
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <span class="metric-label">Total Revenue</span>
-            <span class="metric-value">$84.2k</span>
-            <span class="metric-delta up">+12% vs last mo</span>
+        <div class="mb-8">
+          <div class="dash-section-head">
+            <h2>Global Overview</h2>
+            <div class="fs-sm text-muted">Real-time studio analytics</div>
           </div>
-          <div class="metric-card">
-            <span class="metric-label">New Students</span>
-            <span class="metric-value">1.2k</span>
-            <span class="metric-delta up">+18.5% growth</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Pending Orders</span>
-            <span class="metric-value">48</span>
-            <span class="metric-delta down">7 urgent</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Active Workshops</span>
-            <span class="metric-value">124</span>
-            <span class="metric-delta up">3 currently live</span>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <!-- SALES CHART -->
-          <div class="chart-card">
-            <div class="chart-card-header">
-              <h3 class="chart-card-title">Revenue Forecast</h3>
-              <div class="d-flex gap-2">
-                <button class="btn btn-ghost btn-sm">7 Days</button>
-                <button class="btn btn-outline btn-sm">30 Days</button>
+          
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon">💰</div>
+              <div class="metric-content">
+                <div class="metric-label">Total Revenue</div>
+                <div class="metric-value">$84.2k</div>
+                <div class="metric-delta up">+12% vs last mo</div>
               </div>
             </div>
-            <div class="chart-placeholder">
-              <div class="bar" style="height:30%;"></div>
-              <div class="bar" style="height:45%;"></div>
-              <div class="bar" style="height:60%;"></div>
-              <div class="bar" style="height:55%;"></div>
-              <div class="bar" style="height:80%;"></div>
-              <div class="bar" style="height:75%;"></div>
-              <div class="bar" style="height:95%;"></div>
-              <div class="bar" style="height:90%;"></div>
+            <div class="metric-card">
+              <div class="metric-icon">👥</div>
+              <div class="metric-content">
+                <div class="metric-label">New Students</div>
+                <div class="metric-value">1.2k</div>
+                <div class="metric-delta up">+18.5% growth</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">📋</div>
+              <div class="metric-content">
+                <div class="metric-label">Pending Orders</div>
+                <div class="metric-value">48</div>
+                <div class="metric-delta down" style="background:rgba(231,76,60,0.1); color:var(--clr-danger);">7 urgent</div>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">🎯</div>
+              <div class="metric-content">
+                <div class="metric-label">Active Workshops</div>
+                <div class="metric-value">124</div>
+                <div class="metric-delta up">3 currently live</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHARTS AND TABLES SECTION -->
+        <div class="grid-2 gap-6">
+          <!-- REVENUE FORECAST CHART -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Revenue Forecast</h3>
+              <div class="btn-group d-flex gap-2">
+                <button class="btn btn-ghost btn-sm">7 Days</button>
+                <button class="btn btn-outline btn-sm active">30 Days</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart-container">
+                <div class="chart-bars">
+                  <div class="bar" style="height:30%;" data-value="24k"></div>
+                  <div class="bar" style="height:45%;" data-value="36k"></div>
+                  <div class="bar" style="height:60%;" data-value="48k"></div>
+                  <div class="bar" style="height:55%;" data-value="44k"></div>
+                  <div class="bar" style="height:80%;" data-value="64k"></div>
+                  <div class="bar" style="height:75%;" data-value="60k"></div>
+                  <div class="bar" style="height:95%;" data-value="76k"></div>
+                  <div class="bar" style="height:90%;" data-value="72k"></div>
+                </div>
+                <div class="chart-labels">
+                  <span>Week 1</span>
+                  <span>Week 2</span>
+                  <span>Week 3</span>
+                  <span>Week 4</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- RECENT USERS -->
-          <div class="chart-card">
-            <div class="chart-card-header">
-              <h3 class="chart-card-title">Latest Registrations</h3>
+          <!-- LATEST REGISTRATIONS TABLE -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Latest Registrations</h3>
               <a href="#" class="btn btn-ghost btn-sm">Manage All</a>
             </div>
-            <div class="table-wrap">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>User</th>
-                    <th>Role</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="d-flex align-center gap-3">
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80"
-                        class="avatar avatar-sm">
-                      <div><strong>Mike S.</strong>
-                        <div class="fs-xs text-muted">mike@test.com</div>
-                      </div>
-                    </td>
-                    <td><span class="badge badge-primary">Student</span></td>
-                    <td><button class="btn btn-ghost btn-sm">View</button></td>
-                  </tr>
-                  <tr>
-                    <td class="d-flex align-center gap-3">
-                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
-                        class="avatar avatar-sm">
-                      <div><strong>Elena R.</strong>
-                        <div class="fs-xs text-muted">elena@web.com</div>
-                      </div>
-                    </td>
-                    <td><span class="badge badge-secondary">Pro</span></td>
-                    <td><button class="btn btn-ghost btn-sm">View</button></td>
-                  </tr>
-                  <tr>
-                    <td class="d-flex align-center gap-3">
-                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80"
-                        class="avatar avatar-sm">
-                      <div><strong>Tom K.</strong>
-                        <div class="fs-xs text-muted">tom@dev.io</div>
-                      </div>
-                    </td>
-                    <td><span class="badge badge-primary">Student</span></td>
-                    <td><button class="btn btn-ghost btn-sm">View</button></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th>User</th>
+                      <th>Role</th>
+                      <th class="text-right">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="user-info">
+                          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" 
+                               class="avatar avatar-sm" alt="Mike S.">
+                          <div class="user-details">
+                            <div class="user-name">Mike S.</div>
+                            <div class="user-email">mike@test.com</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge badge-primary">Student</span></td>
+                      <td class="text-right"><button class="btn btn-ghost btn-sm">View</button></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="user-info">
+                          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" 
+                               class="avatar avatar-sm" alt="Elena R.">
+                          <div class="user-details">
+                            <div class="user-name">Elena R.</div>
+                            <div class="user-email">elena@web.com</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge badge-secondary">Pro</span></td>
+                      <td class="text-right"><button class="btn btn-ghost btn-sm">View</button></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="user-info">
+                          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" 
+                               class="avatar avatar-sm" alt="Tom K.">
+                          <div class="user-details">
+                            <div class="user-name">Tom K.</div>
+                            <div class="user-email">tom@dev.io</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge badge-primary">Student</span></td>
+                      <td class="text-right"><button class="btn btn-ghost btn-sm">View</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- REPORTS PANEL -->
-      <section class="dash-panel" id="panel-reports">
-        <div class="dash-section-head">
-          <h2>Reports & Analytics</h2>
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline btn-sm">Download PDF</button>
-            <button class="btn btn-primary btn-sm">Export CSV</button>
-          </div>
-        </div>
-        <div class="metrics-grid mb-8">
-          <div class="metric-card">
-            <span class="metric-label">Avg. Session</span>
-            <span class="metric-value">12m 45s</span>
-            <span class="metric-delta up">+2m vs avg</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Bounce Rate</span>
-            <span class="metric-value">24.2%</span>
-            <span class="metric-delta down">-5% improvement</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Conversion</span>
-            <span class="metric-value">4.8%</span>
-            <span class="metric-delta up">+0.5% growth</span>
-          </div>
-        </div>
-        <div class="card p-6">
-          <h3 class="mb-4">Monthly Performance Trend</h3>
-          <div class="chart-placeholder" style="height:300px;">
-            <div class="bar" style="height:40%;"></div>
-            <div class="bar" style="height:60%;"></div>
-            <div class="bar" style="height:30%;"></div>
-            <div class="bar" style="height:80%;"></div>
-            <div class="bar" style="height:50%;"></div>
-            <div class="bar" style="height:90%;"></div>
-            <div class="bar" style="height:70%;"></div>
-          </div>
-        </div>
-      </section>
-
+      
       <!-- USERS PANEL -->
       <section class="dash-panel" id="panel-users">
         <div class="dash-section-head">
@@ -319,23 +314,39 @@
           <button class="btn btn-primary btn-sm">+ Create New Lesson</button>
         </div>
         <div class="grid-2">
-          <div class="card p-4 d-flex align-center gap-4">
-            <img src="https://images.unsplash.com/photo-1584273143981-43c26a09f617?w=120&h=80&fit=crop" class="rounded">
-            <div class="flex-1">
-              <h4 class="text-left mb-1">Sauerkraut Masterclass</h4>
-              <p class="fs-xs text-muted mb-2">12 Lessons • 4.5h Total</p>
+          <div class="content-item">
+            <div class="content-thumb">
+              <img src="https://cleanfoodliving.net/wp-content/uploads/2023/12/sauerkraut-green-2b.jpg" alt="Sauerkraut">
+            </div>
+            <div class="content-info">
+              <h4>Sauerkraut Masterclass</h4>
+              <div class="content-meta">
+                <span>📚 12 Lessons</span>
+                <span>⏱ 4.5h Total</span>
+              </div>
               <span class="badge badge-success">Published</span>
             </div>
-            <button class="btn btn-outline btn-sm">Manage</button>
+            <div class="content-actions">
+              <button class="btn btn-outline btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--clr-danger);">Delete</button>
+            </div>
           </div>
-          <div class="card p-4 d-flex align-center gap-4">
-            <img src="https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?w=120&h=80&fit=crop" class="rounded">
-            <div class="flex-1">
-              <h4 class="text-left mb-1">Microbiology Basics</h4>
-              <p class="fs-xs text-muted mb-2">8 Lessons • 3h Total</p>
+          <div class="content-item">
+            <div class="content-thumb">
+              <img src="https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?w=600&q=80" alt="Microbiology">
+            </div>
+            <div class="content-info">
+              <h4>Microbiology Basics</h4>
+              <div class="content-meta">
+                <span>📚 8 Lessons</span>
+                <span>⏱ 3h Total</span>
+              </div>
               <span class="badge badge-info">Draft</span>
             </div>
-            <button class="btn btn-outline btn-sm">Manage</button>
+            <div class="content-actions">
+              <button class="btn btn-outline btn-sm">Edit</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--clr-danger);">Delete</button>
+            </div>
           </div>
         </div>
       </section>
@@ -386,22 +397,21 @@
           <button class="btn btn-ghost btn-sm">Mark all read</button>
         </div>
         <div class="card overflow-hidden">
-          <div class="p-4 border-bottom d-flex gap-4 align-center"
-            style="background: rgba(var(--clr-primary-rgb), 0.05);">
-            <span style="font-size:1.5rem;">🚨</span>
-            <div class="flex-1">
-              <h4 class="text-left mb-1" style="font-size:var(--fs-base);">Database Backup Successful</h4>
+          <div class="notif-card unread">
+            <div class="notif-icon-circle">🚨</div>
+            <div class="notif-content">
+              <h4 class="notif-title">Database Backup Successful</h4>
               <p class="fs-xs text-muted mb-0">Scheduled backup completed 2 hours ago. Size: 1.2GB</p>
             </div>
-            <span class="fs-xs text-muted">2h ago</span>
+            <span class="notif-time">2h ago</span>
           </div>
-          <div class="p-4 border-bottom d-flex gap-4 align-center">
-            <span style="font-size:1.5rem;">👤</span>
-            <div class="flex-1">
-              <h4 class="text-left mb-1" style="font-size:var(--fs-base);">New Instructor Application</h4>
+          <div class="notif-card">
+            <div class="notif-icon-circle">👤</div>
+            <div class="notif-content">
+              <h4 class="notif-title">New Instructor Application</h4>
               <p class="fs-xs text-muted mb-0">Chef Julian applied for the 'Koji' department.</p>
             </div>
-            <span class="fs-xs text-muted">5h ago</span>
+            <span class="notif-time">5h ago</span>
           </div>
         </div>
       </section>
@@ -412,7 +422,7 @@
           <h2>Global Configuration</h2>
           <button class="btn btn-primary btn-sm">Save Changes</button>
         </div>
-        <div class="card p-6">
+        <div class="card p-10" style="padding: var(--sp-10);">
           <form class="grid-2">
             <div class="form-group">
               <label class="form-label">Studio Name</label>
@@ -429,7 +439,7 @@
             <div class="form-group">
               <label class="form-label">Default Timezone</label>
               <select class="form-control">
-                <option>Asia/Kolkata (IST)</option>
+                <option selected>Asia/Kolkata (IST)</option>
                 <option>UTC</option>
                 <option>America/New_York</option>
               </select>
