@@ -628,3 +628,37 @@
 @media (max-width: 400px) {
   .metrics-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── Configuration Form Fixes ─── */
+.config-card {
+  padding: var(--sp-8);
+}
+.config-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6) var(--sp-8);
+  text-align: left;
+}
+.config-full {
+  grid-column: span 2;
+}
+.config-form .form-group {
+  margin-bottom: 0;
+}
+.config-form .form-control {
+  width: 100% !important; /* Ensure full width in grid */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .config-form {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+  .config-full {
+    grid-column: span 1;
+  }
+  .config-card {
+    padding: var(--sp-5);
+  }
+}
