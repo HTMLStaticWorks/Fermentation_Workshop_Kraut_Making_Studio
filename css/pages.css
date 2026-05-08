@@ -113,7 +113,7 @@
 }
 
 .toolkit-image {
-  margin-bottom: var(--sp-8);
+  margin-top: var(--sp-8);
 }
 
 .toolkit-img {
@@ -188,7 +188,7 @@
   }
   
   .toolkit-image {
-    margin-bottom: var(--sp-6);
+    margin-top: var(--sp-6);
   }
   
   .toolkit-features {

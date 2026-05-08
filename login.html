@@ -140,39 +140,58 @@
       height: 1px;
       background: var(--clr-border);
     }
+
+    /* Auth Page Toggles - Top Right Corner */
+    .auth-page-toggles {
+      position: fixed;
+      top: var(--sp-4);
+      right: var(--sp-4);
+      display: flex;
+      gap: var(--sp-2);
+      z-index: 1000;
+    }
+
+    /* Hide on mobile and tablet */
+    @media (max-width: 768px) {
+      .auth-page-toggles {
+        display: none;
+      }
+    }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <!-- Top Right Toggles - Web View Only -->
+  <div class="auth-page-toggles">
+    <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
+      </svg>
+    </button>
+    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+      <svg class="icon-moon d-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+      </svg>
+    </button>
+  </div>
+
   <div class="auth-page">
     <div class="auth-card">
-      <div class="auth-toggles">
-        <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
-          </svg>
-        </button>
-        <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
-          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-          <svg class="icon-moon d-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-        </button>
-      </div>
       <a href="index.html" class="auth-logo">
         <div class="logo-mark">🫙</div>
         <div class="logo-text" style="text-align:left;">
@@ -233,7 +252,7 @@
 
 
 
-      <p class="fs-sm mt-8 text-muted">Don't have an account? <a href="register.html">Sign up free</a></p>
+  D    <p class="fs-sm mt-8 text-muted">Don't have an account? <a href="register.html">Sign up free</a></p>
     </div>
   </div>
 

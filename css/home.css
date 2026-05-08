@@ -459,4 +459,17 @@
   .hero-stat-divider { display: none; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .trust-logos { gap: var(--sp-5); }
-}
+  
+  /* Pricing Grid - Mobile One by One Layout */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+    max-width: 400px;
+    margin-inline: auto;
+  }
+  .pricing-grid .pricing-card:last-child {
+    grid-column: span 1;
+    width: 100%;
+    margin-inline: 0;
+  }
+  }
