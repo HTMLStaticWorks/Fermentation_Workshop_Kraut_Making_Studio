@@ -288,10 +288,8 @@
 .pricing-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
 .pricing-card--featured {
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 4px rgba(92,138,60,0.10), var(--shadow-lg);
-  transform: scale(1.03);
+  box-shadow: var(--shadow-xl);
 }
-.pricing-card--featured:hover { transform: scale(1.03) translateY(-6px); }
 .pricing-badge {
   font-size: var(--fs-xs);
   font-weight: var(--fw-semi);
@@ -444,7 +442,7 @@
   }
   .pricing-grid .pricing-card:last-child {
     grid-column: span 2;
-    max-width: calc(50% - var(--sp-3));
+    width: calc(50% - var(--sp-3));
     margin-inline: auto;
   }
   .pricing-card--featured { transform: none; }
