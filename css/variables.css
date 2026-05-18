@@ -93,18 +93,18 @@
 
 /* ─── Dark Mode ─── */
 [data-theme="dark"] {
-  --clr-bg:           #1A1510;
-  --clr-bg-alt:       #231D14;
-  --clr-surface:      #2C2416;
-  --clr-surface-alt:  #352C1E;
-  --clr-border:       #4A3E2E;
+  --clr-bg:           #000000;   /* pure black background */
+  --clr-bg-alt:       #121212;   /* dark grey alternate section */
+  --clr-surface:      #1A1A1A;   /* card background */
+  --clr-surface-alt:  #262626;
+  --clr-border:       #333333;
   --clr-text:         #F0EAE0;
-  --clr-text-muted:   #B0A090;
-  --clr-text-light:   #7A6E62;
-  --clr-overlay:      rgba(0,0,0,0.55);
-  --shadow-card:      0 2px 12px rgba(0,0,0,0.35);
-  --shadow-md:        0 4px 16px rgba(0,0,0,0.40);
-  --shadow-lg:        0 8px 32px rgba(0,0,0,0.50);
+  --clr-text-muted:   #A0A0A0;
+  --clr-text-light:   #666666;
+  --clr-overlay:      rgba(0,0,0,0.65);
+  --shadow-card:      0 2px 12px rgba(0,0,0,0.50);
+  --shadow-md:        0 4px 16px rgba(0,0,0,0.55);
+  --shadow-lg:        0 8px 32px rgba(0,0,0,0.65);
 }
 
 /* ─── RTL Support ─── */

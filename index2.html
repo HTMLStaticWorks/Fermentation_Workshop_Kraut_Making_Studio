@@ -8,7 +8,7 @@
   <meta name="description"
     content="Experience the craft of fermentation through our storytelling lens. Learn the history and the heart behind the crock.">
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ca8a04' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='5' width='12' height='15' rx='3' /><rect x='8' y='2' width='8' height='3' rx='1' /><path d='M6 14c2 0 3-1 6-1s4 1 6 1' /><path d='M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z' /></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -31,7 +31,14 @@
 
       <!-- Logo -->
       <a href="index.html" class="site-logo" aria-label="Fermentation Workshop Home">
-        <div class="logo-mark" aria-hidden="true">🫙</div>
+        <div class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>
+        </div>
         <div class="logo-text">
           <span class="logo-name">KrautCraft</span>
           <span class="logo-tagline">Fermentation Studio</span>
@@ -71,8 +78,14 @@
 
         <!-- RTL Toggle -->
         <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <!-- Right arrow -->
+            <line x1="7" y1="9" x2="17" y2="9" />
+            <polyline points="13 5 17 9 13 13" />
+            <!-- Left arrow -->
+            <line x1="17" y1="15" x2="7" y2="15" />
+            <polyline points="11 11 7 15 11 19" />
           </svg>
         </button>
 
@@ -97,7 +110,7 @@
         </button>
 
         <!-- Dashboard Icon -->
-        <a href="dashboard-admin.html" class="toggle-btn" aria-label="Dashboard">
+        <a href="dashboard-admin.html" class="toggle-btn" aria-label="Dashboard" title="Dashboard">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
@@ -119,7 +132,7 @@
 
 
         <!-- Login CTA -->
-        <a href="login.html" class="btn btn-primary btn-sm hide-mobile">Login</a>
+        <a href="login.html" class="btn btn-primary hide-mobile" style="height: 40px; display: inline-flex; align-items: center; justify-content: center; padding-top: 0; padding-bottom: 0;">Login</a>
 
         <!-- Hamburger -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -173,27 +186,108 @@
       </div>
     </div>
     <div class="story-hero-media">
-      <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&q=80" alt="Fermentation jars">
+      <img src="images/kraut_hero.png" alt="Sauerkraut in a ceramic crock">
       <div class="story-hero-media-overlay"></div>
     </div>
   </section>
 
   <!-- NARRATIVE SECTION -->
-  <section class="section">
+  <style>
+    .manifesto-section {
+      background: linear-gradient(135deg, #1c1917 0%, #292524 100%); /* Deep warm stone/charcoal gradient */
+      color: #f5f5f4;
+      padding: 6rem 0;
+      overflow: hidden;
+      margin: 4rem 0;
+      border-radius: 24px; /* Give the section itself rounded corners for a premium feel */
+    }
+    .manifesto-section .section-title {
+      color: #f5f5f4;
+      text-align: left;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .manifesto-section .section-title span {
+      color: #ca8a04; /* Warm amber/gold accent */
+    }
+    .manifesto-section .divider {
+      margin-left: 0;
+      background-color: #ca8a04;
+      width: 60px;
+      height: 4px;
+      margin-bottom: 2rem;
+    }
+    .manifesto-section .lead-text {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: #e7e5e4;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      font-family: inherit;
+    }
+    .manifesto-section p {
+      color: #a8a29e;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .manifesto-img-wrap {
+      position: relative;
+    }
+    .glass-frame {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-frame:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.7);
+    }
+    .manifesto-img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      filter: saturate(0.9) contrast(1.1); /* Slight vintage feel */
+    }
+    
+    @media (max-width: 768px) {
+      .manifesto-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .manifesto-section {
+        padding: 4rem 0;
+        border-radius: 0; /* Full width on mobile */
+      }
+      .manifesto-section .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <section class="section manifesto-section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-text" data-reveal="left">
-          <span class="section-label">Artisan Process</span>
-          <h2 class="section-title" style="text-align:left;">Why We <span>Craft</span></h2>
-          <div class="divider" style="margin-left:0;"></div>
-          <p>In a world of fast food and industrial processing, fermentation is a radical act of patience. It is a
-            partnership between human and microbe, requiring nothing but salt, time, and care.</p>
-          <p>We believe that when you ferment your own food, you reclaim your health and your connection to the seasons.
-            Every batch is a unique expression of your kitchen's environment.</p>
+      <div class="manifesto-grid">
+        <div class="manifesto-text" data-reveal="left">
+          <span class="section-label" style="color: #ca8a04;">Artisan Process</span>
+          <h2 class="section-title">Why We <span>Craft</span></h2>
+          <div class="divider"></div>
+          <p class="lead-text">In a world of fast food and industrial processing, fermentation is a radical act of patience. It is a partnership between human and microbe, requiring nothing but salt, time, and care.</p>
+          <p>We believe that when you ferment your own food, you reclaim your health and your connection to the seasons. Every batch is a unique expression of your kitchen's environment.</p>
         </div>
-        <div class="about-img-wrap" data-reveal="right">
-          <img src="https://images.unsplash.com/photo-1584285405429-136bf988919c?w=700&q=80" alt="Artisan Process"
-            class="about-img">
+        <div class="manifesto-img-wrap" data-reveal="right">
+          <div class="glass-frame">
+            <img src="images/cabbage_slice.png" alt="Slicing fresh cabbage" class="manifesto-img">
+          </div>
         </div>
       </div>
     </div>
@@ -221,32 +315,244 @@
       </div>
       <div class="card-grid">
         <div class="card" data-reveal>
-          <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&q=80"
-              alt="Kimchi"></div>
+          <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1585944672394-4c58a015c1fb?w=600&q=80"
+              alt="Classic Sauerkraut"></div>
           <div class="card-body">
-            <h3 class="card-title">The Kimchi Ritual</h3>
-            <p class="card-text">Discover why this Korean staple is more than just a side dish—it's a cultural identity.
+            <h3 class="card-title">The Kraut Ritual</h3>
+            <p class="card-text">Master the classic German sauerkraut technique that has preserved health for generations.
             </p>
             <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Learn More</a>
           </div>
         </div>
         <div class="card" data-reveal class="reveal-d1">
-          <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=600&q=80"
-              alt="SCOBY"></div>
+          <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&q=80"
+              alt="Spicy Kraut"></div>
           <div class="card-body">
-            <h3 class="card-title">Bubbly Wisdom</h3>
-            <p class="card-text">Exploring the mystery of the SCOBY and the science of effervescent tea.</p>
+            <h3 class="card-title">Spicy Cabbage</h3>
+            <p class="card-text">Infuse your kraut with chili and garlic for a punchy, gut-healing kick.</p>
             <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Learn More</a>
           </div>
         </div>
         <div class="card" data-reveal class="reveal-d2">
           <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=80"
-              alt="Miso"></div>
+              alt="Golden Kraut"></div>
           <div class="card-body">
-            <h3 class="card-title">Ancient Umami</h3>
-            <p class="card-text">The slow, transformative power of Koji and the deep flavors of traditional miso.</p>
+            <h3 class="card-title">Golden Turmeric</h3>
+            <p class="card-text">Learn to make anti-inflammatory golden kraut with turmeric and black pepper.</p>
             <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Learn More</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════════════════ -->
+  <style>
+    .premium-pricing {
+      background-color: #fafaf9; /* Very light warm gray */
+      padding: 6rem 0;
+    }
+    .premium-pricing .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .pricing-cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+    .premium-card {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .premium-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    }
+    .premium-card.featured {
+      background: #1c1917;
+      color: #fff;
+      border-color: #1c1917;
+      transform: scale(1.03);
+    }
+    .premium-card.featured:hover {
+      transform: translateY(-12px) scale(1.03);
+    }
+    .card-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #f5f5f4;
+      color: #78716c;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .featured .card-badge {
+      background: #ca8a04;
+      color: #fff;
+    }
+    .card-plan-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1c1917;
+    }
+    .featured .card-plan-name {
+      color: #fff;
+    }
+    .card-price {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      color: #1c1917;
+    }
+    .featured .card-price {
+      color: #fff;
+    }
+    .card-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #78716c;
+      margin-left: 0.25rem;
+    }
+    .featured .card-price span {
+      color: #a8a29e;
+    }
+    .card-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2.5rem 0;
+      flex-grow: 1;
+    }
+    .card-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f5f5f4;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #44403c;
+    }
+    .featured .card-features li {
+      border-color: #292524;
+      color: #d6d3d1;
+    }
+    .card-features li:last-child {
+      border-bottom: none;
+    }
+    .feature-icon {
+      margin-right: 0.75rem;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-btn {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-light {
+      background: #1c1917;
+      color: #fff;
+    }
+    .btn-light:hover {
+      background: #292524;
+    }
+    .btn-gold {
+      background: #ca8a04;
+      color: #fff;
+    }
+    .btn-gold:hover {
+      background: #a16207;
+    }
+    
+    @media (max-width: 1024px) {
+      .pricing-cards-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .premium-card.featured {
+        transform: none;
+      }
+      .premium-card.featured:hover {
+        transform: translateY(-12px);
+      }
+    }
+  </style>
+  <section class="section premium-pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Membership</span>
+        <h2 class="section-title">Simple, Transparent <span>Pricing</span></h2>
+        <p class="section-subtitle">No hidden fees. Cancel anytime. Start free — upgrade when you're ready.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="pricing-cards-container">
+        <!-- Free -->
+        <div class="premium-card">
+          <div class="card-badge">Free Forever</div>
+          <div class="card-plan-name">Starter</div>
+          <div class="card-price">$0<span>/mo</span></div>
+          <ul class="card-features">
+            <li><span class="feature-icon">✅</span> 10 free lessons</li>
+            <li><span class="feature-icon">✅</span> Community access</li>
+            <li><span class="feature-icon">✅</span> Basic recipe library</li>
+            <li><span class="feature-icon">❌</span> Live workshops</li>
+            <li><span class="feature-icon">❌</span> Certifications</li>
+          </ul>
+          <a href="register.html" class="card-btn btn-light">Get Started Free</a>
+        </div>
+        
+        <!-- Pro -->
+        <div class="premium-card featured">
+          <div class="card-badge">Most Popular</div>
+          <div class="card-plan-name">Pro Fermenter</div>
+          <div class="card-price">$19<span>/mo</span></div>
+          <ul class="card-features">
+            <li><span class="feature-icon">✅</span> All 200+ lessons</li>
+            <li><span class="feature-icon">✅</span> 2 Live workshops/mo</li>
+            <li><span class="feature-icon">✅</span> Full recipe library</li>
+            <li><span class="feature-icon">✅</span> Certificates</li>
+            <li><span class="feature-icon">✅</span> Priority support</li>
+          </ul>
+          <a href="register.html" class="card-btn btn-gold">Start 14-Day Free Trial</a>
+        </div>
+        
+        <!-- Studio -->
+        <div class="premium-card">
+          <div class="card-badge">Best Value</div>
+          <div class="card-plan-name">Studio Master</div>
+          <div class="card-price">$39<span>/mo</span></div>
+          <ul class="card-features">
+            <li><span class="feature-icon">✅</span> Everything in Pro</li>
+            <li><span class="feature-icon">✅</span> Unlimited live sessions</li>
+            <li><span class="feature-icon">✅</span> 1-on-1 mentoring</li>
+            <li><span class="feature-icon">✅</span> 20% shop discount</li>
+            <li><span class="feature-icon">✅</span> Private Slack group</li>
+          </ul>
+          <a href="register.html" class="card-btn btn-light">Go Studio Master</a>
         </div>
       </div>
     </div>
@@ -260,7 +566,14 @@
         <!-- Brand Column -->
         <div class="footer-col footer-brand">
           <a href="index.html" class="site-logo" style="text-decoration:none;">
-            <div class="logo-mark" aria-hidden="true">🫙</div>
+            <div class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>
+        </div>
             <div class="logo-text">
               <span class="logo-name" style="color:#E8DDD0;">KrautCraft</span>
               <span class="logo-tagline">Fermentation Studio</span>

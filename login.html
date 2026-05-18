@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | KrautCraft Fermentation Studio</title>
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ca8a04' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='5' width='12' height='15' rx='3' /><rect x='8' y='2' width='8' height='3' rx='1' /><path d='M6 14c2 0 3-1 6-1s4 1 6 1' /><path d='M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z' /></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -59,29 +59,30 @@
     }
 
     .auth-logo .logo-mark {
-      width: 80px;
-      height: 80px;
+      width: 50px;
+      height: 50px;
       background: linear-gradient(135deg, #5C8A3C, #D48C31);
-      border-radius: 20px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
+      font-size: 2rem;
       line-height: 1;
       flex-shrink: 0;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .auth-logo .logo-name {
-      font-size: 2rem;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
       color: var(--clr-text);
-      font-weight: var(--fw-black);
+      font-weight: var(--fw-bold);
       line-height: 1;
     }
 
     .auth-logo .logo-tagline {
       font-size: var(--fs-xs);
-      color: var(--clr-primary);
+      color: var(--clr-text-muted);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       display: block;
@@ -168,9 +169,13 @@
   <!-- Top Right Toggles - Web View Only -->
   <div class="auth-page-toggles">
     <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="7" y1="9" x2="17" y2="9" />
+            <polyline points="13 5 17 9 13 13" />
+            <line x1="17" y1="15" x2="7" y2="15" />
+            <polyline points="11 11 7 15 11 19" />
+          </svg>
     </button>
     <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
       <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -194,16 +199,23 @@
 
   <div class="auth-page">
     <div class="auth-card">
-      <a href="index.html" class="auth-logo">
-        <div class="logo-mark">🫙</div>
-        <div class="logo-text" style="text-align:left;">
+      <a href="index.html" class="site-logo">
+        <div class="logo-mark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>
+        </div>
+        <div class="logo-text">
           <span class="logo-name">KrautCraft</span>
           <span class="logo-tagline">Fermentation Studio</span>
         </div>
       </a>
 
-      <h2>Welcome Back</h2>
-      <p class="text-muted fs-sm mb-8">Sign in to continue your fermentation journey.</p>
+      <h2 style="font-size: 2.2rem; font-weight: var(--fw-bold); color: var(--clr-text); margin-bottom: 0.5rem;">Welcome Back</h2>
+      <p class="text-muted fs-base mb-8">Sign in to continue your fermentation journey.</p>
 
       <form id="login-form">
         <div class="form-group" style="text-align:left;">

@@ -25,6 +25,48 @@
 }
 [dir="rtl"] .dash-sidebar { left: auto; right: 0; }
 
+/* Light mode sidebar overrides */
+[data-theme="light"] .dash-sidebar {
+  background: #faf6f0;
+  color: #1A1510;
+  border-right: 1px solid var(--clr-border);
+}
+
+[data-theme="light"] .sidebar-header {
+  border-bottom-color: var(--clr-border);
+}
+
+[data-theme="light"] .sidebar-brand-name {
+  color: #1A1510;
+}
+
+[data-theme="light"] .sidebar-section-label {
+  color: #a89f91;
+}
+
+[data-theme="light"] .sidebar-link {
+  color: #5A4E44;
+}
+
+[data-theme="light"] .sidebar-link:hover {
+  background: rgba(26, 21, 16, 0.04);
+  color: #1A1510;
+}
+
+[data-theme="light"] .sidebar-link.active {
+  background: rgba(92, 138, 60, 0.1);
+  color: var(--clr-primary);
+  border-left-color: var(--clr-primary);
+}
+
+[data-theme="light"] .sidebar-footer {
+  border-top-color: var(--clr-border);
+}
+
+[data-theme="light"] .sidebar-user-name {
+  color: #1A1510;
+}
+
 .sidebar-header {
   padding: var(--sp-6);
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -369,7 +411,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--sp-6);
 }
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
 
@@ -582,10 +624,35 @@
   }
   .card {
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
   }
-  .table-wrap {
-    text-align: left;
+  .card-header {
+    justify-content: center !important;
+    text-align: center;
+  }
+  .card-title {
+    text-align: center !important;
+    width: 100%;
+  }
+  .table, .table th, .table td {
+    text-align: center !important;
+  }
+  .user-info {
+    justify-content: center !important;
+  }
+  .metric-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .metric-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .status-list div {
+    justify-content: center !important;
+    gap: var(--sp-4) !important;
   }
   
   /* Hide topbar notification/profile on mobile/tablet */

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard | KrautCraft</title>
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ca8a04' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='5' width='12' height='15' rx='3' /><rect x='8' y='2' width='8' height='3' rx='1' /><path d='M6 14c2 0 3-1 6-1s4 1 6 1' /><path d='M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z' /></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -21,47 +21,41 @@
   <!-- SIDEBAR -->
   <aside class="dash-sidebar" id="dash-sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo-mark">🫙</div>
-      <div class="sidebar-brand">
-        <div class="sidebar-brand-name">KrautCraft</div>
-        <div class="sidebar-brand-sub">FERMENTATION STUDIO</div>
-      </div>
+      <a href="index.html" style="display: flex; align-items: center; gap: var(--sp-3); text-decoration: none; color: inherit;">
+        <div class="sidebar-logo-mark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>
+        </div>
+        <div class="sidebar-brand">
+          <div class="sidebar-brand-name">KrautCraft</div>
+          <div class="sidebar-brand-sub">FERMENTATION STUDIO</div>
+        </div>
+      </a>
     </div>
 
     <nav class="sidebar-nav">
-      <div class="sidebar-section-label">Intelligence</div>
-      <a href="dashboard-user.html" class="sidebar-link">
-        <span class="sidebar-icon">🏠</span> user dashboard
-      </a>
-      <a href="index2.html" class="sidebar-link">
-        <span class="sidebar-icon">📖</span> Our Story
-      </a>
-      
       <div class="sidebar-section-label">Management</div>
       <a href="#" class="sidebar-link" data-tab="users">
-        <span class="sidebar-icon">👥</span> User Management
+        <span class="sidebar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span> User Management
       </a>
       <a href="#" class="sidebar-link" data-tab="orders">
-        <span class="sidebar-icon">🛒</span> Orders & Bookings
+        <span class="sidebar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.99-1.61L23 6H6" /></svg></span> Orders & Bookings
       </a>
 
       <div class="sidebar-section-label">System</div>
-      <a href="#" class="sidebar-link" data-tab="notifs">
-        <span class="sidebar-icon">🔔</span> Notifications <span class="sidebar-badge">12</span>
-      </a>
       <a href="#" class="sidebar-link" data-tab="settings">
-        <span class="sidebar-icon">⚙️</span> Configuration
+        <span class="sidebar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.1a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg></span> Configuration
       </a>
       <div class="sidebar-footer">
         <!-- Mobile/Tablet Notifications and Profile -->
         <div class="sidebar-mobile-actions">
-          <button class="sidebar-link" aria-label="Alerts">
-            <span class="sidebar-icon">🔔</span> Notifications <span class="sidebar-badge">12</span>
-          </button>
           <div class="sidebar-user">
             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" class="avatar avatar-sm" alt="Profile">
             <div class="sidebar-user-info">
-              <div class="sidebar-user-name">Admin</div>
               <div class="sidebar-user-role">Administrator</div>
             </div>
           </div>
@@ -91,9 +85,13 @@
 
         <div class="d-flex gap-2 ms-2">
           <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="7" y1="9" x2="17" y2="9" />
+            <polyline points="13 5 17 9 13 13" />
+            <line x1="17" y1="15" x2="7" y2="15" />
+            <polyline points="11 11 7 15 11 19" />
+          </svg>
           </button>
           <button class="toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
             <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -169,7 +167,7 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Revenue Forecast</h3>
-              <div class="btn-group d-flex gap-2">
+              <div class="btn-group d-flex" style="gap: var(--sp-2);">
                 <button class="btn btn-ghost btn-sm">7 Days</button>
                 <button class="btn btn-outline btn-sm active">30 Days</button>
               </div>
@@ -257,6 +255,68 @@
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP WORKSHOPS -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Top Workshops</h3>
+              <a href="#" class="btn btn-ghost btn-sm">View All</a>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th>Workshop</th>
+                      <th>Students</th>
+                      <th>Revenue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Kraut Masterclass</td>
+                      <td>450</td>
+                      <td>$8,500</td>
+                    </tr>
+                    <tr>
+                      <td>Kimchi Advanced</td>
+                      <td>320</td>
+                      <td>$6,400</td>
+                    </tr>
+                    <tr>
+                      <td>Kombucha Brewing</td>
+                      <td>280</td>
+                      <td>$4,200</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SYSTEM STATUS -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">System Status</h3>
+              <span class="badge badge-success">Operational</span>
+            </div>
+            <div class="card-body">
+              <div class="status-list" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Server API</span>
+                  <span style="color: var(--clr-success);">Online</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Database</span>
+                  <span style="color: var(--clr-success);">Connected</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Storage</span>
+                  <span>75% Full</span>
+                </div>
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@
   <meta name="description"
     content="Browse KrautCraft's full range of fermentation workshops — sauerkraut, kimchi, kombucha, koji and more. Beginner to advanced, online and in-person.">
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫙</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ca8a04' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='5' width='12' height='15' rx='3' /><rect x='8' y='2' width='8' height='3' rx='1' /><path d='M6 14c2 0 3-1 6-1s4 1 6 1' /><path d='M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z' /></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -32,7 +32,14 @@
 
       <!-- Logo -->
       <a href="index.html" class="site-logo" aria-label="Fermentation Workshop Home">
-        <div class="logo-mark" aria-hidden="true">🫙</div>
+        <div class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>
+        </div>
         <div class="logo-text">
           <span class="logo-name">KrautCraft</span>
           <span class="logo-tagline">Fermentation Studio</span>
@@ -72,8 +79,12 @@
 
         <!-- RTL Toggle -->
         <button class="toggle-btn" id="rtl-toggle" aria-label="Toggle RTL layout">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 8l4 4-4 4M3 12h18M7 4h10a2 2 0 010 4H7a2 2 0 010-4z" />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="7" y1="9" x2="17" y2="9" />
+            <polyline points="13 5 17 9 13 13" />
+            <line x1="17" y1="15" x2="7" y2="15" />
+            <polyline points="11 11 7 15 11 19" />
           </svg>
         </button>
 
@@ -98,7 +109,7 @@
         </button>
 
         <!-- Dashboard Icon -->
-        <a href="dashboard-admin.html" class="toggle-btn" aria-label="Dashboard">
+        <a href="dashboard-admin.html" class="toggle-btn" aria-label="Dashboard" title="Dashboard">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
@@ -120,7 +131,7 @@
 
 
         <!-- Login CTA -->
-        <a href="login.html" class="btn btn-primary btn-sm hide-mobile">Login</a>
+        <a href="login.html" class="btn btn-primary hide-mobile" style="height: 40px; display: inline-flex; align-items: center; justify-content: center; padding-top: 0; padding-bottom: 0;">Login</a>
 
         <!-- Hamburger -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -185,14 +196,59 @@
       </div>
       <div class="workshops-filter" id="workshop-filters" role="group" aria-label="Workshop filters">
         <button class="filter-btn active" data-filter="all">All Workshops</button>
-        <button class="filter-btn" data-filter="beginner">🌱 Beginner</button>
-        <button class="filter-btn" data-filter="advanced">🔥 Advanced</button>
-        <button class="filter-btn" data-filter="kraut">🫙 Kraut Master</button>
-        <button class="filter-btn" data-filter="kimchi">🥬 Kimchi</button>
-        <button class="filter-btn" data-filter="kombucha">🫙 Kombucha</button>
-        <button class="filter-btn" data-filter="koji">🍄 Koji & Miso</button>
-        <button class="filter-btn" data-filter="pickles">🥒 Pickles</button>
-        <button class="filter-btn" data-filter="health">💚 Gut Health</button>
+        <button class="filter-btn" data-filter="beginner">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 21 3c-1.4 4-2 5.5-3.1 11.2A7 7 0 0 1 11 20z" />
+            <path d="M12 12l-5 5" />
+          </svg>Beginner
+        </button>
+        <button class="filter-btn" data-filter="advanced">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 0 0-1.5 1.5-1.5 3.5" />
+            <path d="M14.5 14.5A2.5 2.5 0 0 1 12 12c0-1.38.5-2 1-3 0 0 1.5 1.5 1.5 3.5" />
+            <path d="M12 2C7 5 7 11 7 15a5 5 0 0 0 10 0c0-4-1-10-5-13z" />
+          </svg>Advanced
+        </button>
+        <button class="filter-btn" data-filter="kraut">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>Kraut Master
+        </button>
+        <button class="filter-btn" data-filter="kimchi">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <path d="M2 12a10 10 0 0 0 20 0Z" />
+            <path d="M22 12h-20" />
+          </svg>Kimchi
+        </button>
+        <button class="filter-btn" data-filter="kombucha">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>Kombucha
+        </button>
+        <button class="filter-btn" data-filter="koji">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <path d="M4.5 3h15" />
+            <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3" />
+            <path d="M6 14h12" />
+          </svg>Koji & Miso
+        </button>
+        <button class="filter-btn" data-filter="pickles">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" />
+            <path d="M12 22V12" />
+          </svg>Pickles
+        </button>
+        <button class="filter-btn" data-filter="health">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.5 4.04 3 5.5l7 7 7-7z" />
+          </svg>Gut Health
+        </button>
       </div>
     </div>
   </section>
@@ -222,10 +278,10 @@
           <p>Our workshops aren't just about recipes; they're about mastering the biological science of flavor. We provide
             every student with the confidence to experiment safely.</p>
           <div class="about-values-row" style="margin-top:var(--sp-6);">
-            <div class="about-value"><span>🎥</span> HD Video Lessons</div>
-            <div class="about-value"><span>👨‍🍳</span> Pro Chef Guidance</div>
-            <div class="about-value"><span>🧪</span> Science-Backed</div>
-            <div class="about-value"><span>💎</span> Lifetime Access</div>
+            <div class="about-value"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><rect x="2" y="6" width="14" height="12" rx="2" /><path d="M22 17l-6-5 6-5v10z" /></svg></span> HD Video Lessons</div>
+            <div class="about-value"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></span> Pro Chef Guidance</div>
+            <div class="about-value"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><path d="M4.5 3h15" /><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3" /><path d="M6 14h12" /></svg></span> Science-Backed</div>
+            <div class="about-value"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg></span> Lifetime Access</div>
           </div>
           <a href="register.html" class="btn btn-primary btn-lg" style="margin-top:var(--sp-8);">Get Started Now</a>
         </div>
@@ -247,10 +303,10 @@
           <div class="divider"></div>
           <p>Every workshop includes our comprehensive digital toolkit. Downloadable brine charts, fermentation logs, and troubleshooting guides ensure you never have to guess. Join a community that shares your passion for living foods.</p>
           <div class="toolkit-features">
-            <div class="toolkit-feature"><span>📑</span> Brine Cheat-Sheets</div>
-            <div class="toolkit-feature"><span>📓</span> Digital Logs</div>
-            <div class="toolkit-feature"><span>💬</span> Community Forum</div>
-            <div class="toolkit-feature"><span>📱</span> Mobile-Ready</div>
+            <div class="toolkit-feature"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></svg></span> Brine Cheat-Sheets</div>
+            <div class="toolkit-feature"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg></span> Digital Logs</div>
+            <div class="toolkit-feature"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></span> Community Forum</div>
+            <div class="toolkit-feature"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12" y2="18" /></svg></span> Mobile-Ready</div>
           </div>
         </div>
         
@@ -427,7 +483,14 @@
         <!-- Brand Column -->
         <div class="footer-col footer-brand">
           <a href="index.html" class="site-logo" style="text-decoration:none;">
-            <div class="logo-mark" aria-hidden="true">🫙</div>
+            <div class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="5" width="12" height="15" rx="3" />
+            <rect x="8" y="2" width="8" height="3" rx="1" />
+            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+          </svg>
+        </div>
             <div class="logo-text">
               <span class="logo-name" style="color:#E8DDD0;">KrautCraft</span>
               <span class="logo-tagline">Fermentation Studio</span>
