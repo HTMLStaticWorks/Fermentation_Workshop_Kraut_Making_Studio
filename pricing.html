@@ -67,6 +67,11 @@
     .featured .card-badge {
       background: #ca8a04;
       color: #fff;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      text-align: center;
     }
     .card-plan-name {
       font-size: 1.65rem;
@@ -239,11 +244,12 @@
     [data-theme="dark"] .faq-item.active .faq-answer {
       border-top-color: var(--clr-border);
     }
+    /* Hide the redundant inline toggle span — pages.css ::after already renders the + */
     .faq-toggle {
-      transition: transform 0.3s ease;
-      font-size: 1.2rem;
+      display: none;
     }
-    .faq-item.active .faq-toggle {
+    /* Rotate the ::after + when item is toggled active by JS */
+    .faq-item.active .faq-question::after {
       transform: rotate(45deg);
     }
     
@@ -430,13 +436,13 @@
       </a>
 
       <div class="mobile-nav-divider"></div>
+      <a href="dashboard-admin.html" class="mobile-nav-link" data-page="dashboard">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
       <a href="login.html" class="mobile-nav-link">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
         Login
-      </a>
-      <a href="register.html" class="mobile-nav-link">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" /></svg>
-        Register Free
       </a>
 
       <div class="mobile-nav-divider"></div>

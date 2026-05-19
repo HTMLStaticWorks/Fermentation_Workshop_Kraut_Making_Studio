@@ -44,12 +44,20 @@
     }
 
     .auth-card .site-logo {
+      display: flex;
       justify-content: center;
+      gap: var(--sp-3);
       margin-bottom: var(--sp-8);
     }
 
+    .auth-card .logo-text {
+      align-items: flex-start;
+      text-align: left;
+    }
+
     .auth-card h2 {
-      font-size: var(--fs-md);
+      font-family: var(--font-heading);
+      font-size: var(--fs-3xl);
       font-weight: var(--fw-bold);
       margin-bottom: var(--sp-2);
       color: var(--clr-text);
@@ -173,7 +181,7 @@
         </div>
       </a>
 
-      <h2 style="font-size: 2.2rem; font-weight: var(--fw-bold); color: var(--clr-text); margin-bottom: 0.5rem;">Welcome Back</h2>
+      <h2>Welcome Back</h2>
       <p class="text-muted fs-base mb-8">Sign in to continue your fermentation journey.</p>
 
       <form id="login-form">
