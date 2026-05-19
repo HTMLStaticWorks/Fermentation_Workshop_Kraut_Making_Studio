@@ -6,15 +6,15 @@
   'use strict';
 
   const allWorkshops = [
-    { img:'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80', badge:'Bestseller', title:'Sauerkraut Fundamentals', desc:'Master the #1 gateway ferment. Brine ratios, crocking, troubleshooting & your first perfect batch.', rating:5, reviews:842, price:49, oldPrice:79, duration:'4 hrs', level:'Beginner', tag:'kraut' },
-    { img:'https://images.unsplash.com/photo-1583224964978-2257b960c3d3?w=600&q=80', badge:'New', title:'Kimchi Masterclass', desc:'Authentic Korean technique — from napa to radish kimchi, jeotgal and gochujang secrets.', rating:5, reviews:612, price:69, oldPrice:null, duration:'6 hrs', level:'Intermediate', tag:'kimchi' },
-    { img:'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80', badge:'Popular', title:'Kombucha Brewing', desc:'SCOBY cultivation, first & second ferment, flavoring, carbonation and bottling for retail quality.', rating:4, reviews:519, price:79, oldPrice:99, duration:'8 hrs', level:'Intermediate', tag:'kombucha' },
-    { img:'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=600&q=80', badge:'Advanced', title:'Wild Fermentation & Koji', desc:'Harness wild yeasts, koji mold for miso, sake & umami-bomb condiments. Deep dive into umami science.', rating:5, reviews:287, price:119, oldPrice:null, duration:'12 hrs', level:'Advanced', tag:'advanced' },
-    { img:'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80', badge:'Live', title:'Gut Health & Ferments', desc:'The science of probiotics, microbiome nutrition, and how fermented foods transform your health.', rating:5, reviews:394, price:59, oldPrice:79, duration:'5 hrs', level:'All Levels', tag:'health' },
-    { img:'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&q=80', badge:'Bundle', title:'The Complete Pickle Lab', desc:'Lacto-fermented pickles, half-sours, dilly beans, pickled eggs and international brine traditions.', rating:4, reviews:458, price:89, oldPrice:120, duration:'10 hrs', level:'Beginner+', tag:'pickles' },
-    { img:'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80', badge:'Live', title:'Live Sauerkraut Sunday', desc:'Weekly live session — make kraut together, ask questions, and share your batch results.', rating:5, reviews:198, price:29, oldPrice:null, duration:'2 hrs', level:'All Levels', tag:'live' },
-    { img:'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?w=600&q=80', badge:'Beginner', title:'Fermentation 101', desc:'The ultimate introduction — what fermentation is, why it matters, and how to start safely at home.', rating:5, reviews:1204, price:0, oldPrice:null, duration:'3 hrs', level:'Beginner', tag:'beginner' },
-    { img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6-F7GV_5VQ5sgXTQ-j055qPvzIbsv7-CQw&s', badge:'Advanced', title:'Miso & Amazake', desc:'Traditional Japanese koji ferments. Make shiro miso, hatcho miso, and sweet amazake from scratch.', rating:5, reviews:165, price:99, oldPrice:130, duration:'10 hrs', level:'Advanced', tag:'advanced' },
+    { img:'images/Sauerkraut Fundamentals.jfif.jpeg', badge:'Bestseller', title:'Sauerkraut Fundamentals', desc:'Master the #1 gateway ferment. Brine ratios, crocking, troubleshooting & your first perfect batch.', rating:5, reviews:842, price:49, oldPrice:79, duration:'4 hrs', level:'Beginner', tag:'kraut' },
+    { img:'images/Kimchi Masterclass.jfif.jpeg', badge:'New', title:'Kimchi Masterclass', desc:'Authentic Korean technique — from napa to radish kimchi, jeotgal and gochujang secrets.', rating:5, reviews:612, price:69, oldPrice:null, duration:'6 hrs', level:'Intermediate', tag:'kimchi' },
+    { img:'images/Kombucha Brewing.jfif.jpeg', badge:'Popular', title:'Kombucha Brewing', desc:'SCOBY cultivation, first & second ferment, flavoring, carbonation and bottling for retail quality.', rating:4, reviews:519, price:79, oldPrice:99, duration:'8 hrs', level:'Intermediate', tag:'kombucha' },
+    { img:'images/Wild Fermentation & Koji.jfif.jpeg', badge:'Advanced', title:'Wild Fermentation & Koji', desc:'Harness wild yeasts, koji mold for miso, sake & umami-bomb condiments. Deep dive into umami science.', rating:5, reviews:287, price:119, oldPrice:null, duration:'12 hrs', level:'Advanced', tag:'advanced' },
+    { img:'images/Gut Health & Ferments.jfif..jpeg', badge:'Live', title:'Gut Health & Ferments', desc:'The science of probiotics, microbiome nutrition, and how fermented foods transform your health.', rating:5, reviews:394, price:59, oldPrice:79, duration:'5 hrs', level:'All Levels', tag:'health' },
+    { img:'images/The Complete Pickle Lab.jfif.jpeg', badge:'Bundle', title:'The Complete Pickle Lab', desc:'Lacto-fermented pickles, half-sours, dilly beans, pickled eggs and international brine traditions.', rating:4, reviews:458, price:89, oldPrice:120, duration:'10 hrs', level:'Beginner+', tag:'pickles' },
+    { img:'images/Live Sauerkraut Sunday.jfif.jpeg', badge:'Live', title:'Live Sauerkraut Sunday', desc:'Weekly live session — make kraut together, ask questions, and share your batch results.', rating:5, reviews:198, price:29, oldPrice:null, duration:'2 hrs', level:'All Levels', tag:'live' },
+    { img:'images/Fermentation 101.jfif.jpeg', badge:'Beginner', title:'Fermentation 101', desc:'The ultimate introduction — what fermentation is, why it matters, and how to start safely at home.', rating:5, reviews:1204, price:0, oldPrice:null, duration:'3 hrs', level:'Beginner', tag:'beginner' },
+    { img:'images/Miso & Amazake.jfif.jpeg', badge:'Advanced', title:'Miso & Amazake', desc:'Traditional Japanese koji ferments. Make shiro miso, hatcho miso, and sweet amazake from scratch.', rating:5, reviews:165, price:99, oldPrice:130, duration:'10 hrs', level:'Advanced', tag:'advanced' },
   ];
 
   function stars(n) {
@@ -46,8 +46,8 @@
           </div>
 
           <div class="card-meta">
-            <span>⏱ ${w.duration}</span>
-            <span>📊 ${w.level}</span>
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-top; margin-right: 4px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${w.duration}</span>
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-top; margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>${w.level}</span>
           </div>
 
           <div class="price">

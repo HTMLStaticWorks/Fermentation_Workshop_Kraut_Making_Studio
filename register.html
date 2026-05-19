@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
   <style>
     .auth-page {
       min-height: 100vh;
@@ -50,50 +51,9 @@
       }
     }
 
-    .auth-logo {
-      display: flex;
-      align-items: center;
+    .auth-card .site-logo {
       justify-content: center;
-      gap: var(--sp-4);
-      margin-bottom: var(--sp-10);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .auth-logo .logo-text {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .auth-logo .logo-mark {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #5C8A3C, #D48C31);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      line-height: 1;
-      flex-shrink: 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .auth-logo .logo-name {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      color: var(--clr-text);
-      font-weight: var(--fw-bold);
-      line-height: 1;
-    }
-
-    .auth-logo .logo-tagline {
-      font-size: var(--fs-xs);
-      color: var(--clr-text-muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: block;
-      margin-top: 2px;
+      margin-bottom: var(--sp-8);
     }
 
     .auth-card h2 {

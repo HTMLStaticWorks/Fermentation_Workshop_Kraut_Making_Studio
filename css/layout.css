@@ -44,6 +44,7 @@
   color: #fff;
   flex-shrink: 0;
   transition: transform var(--trans-bounce);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 .site-logo:hover .logo-mark { transform: rotate(-8deg) scale(1.08); }
 
@@ -56,9 +57,13 @@
 }
 .logo-tagline {
   font-size: 0.65rem;
-  color: var(--clr-text-muted);
-  letter-spacing: 0.06em;
+  color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+.site-footer .logo-tagline {
+  color: var(--clr-primary-light);
 }
 
 /* Nav */

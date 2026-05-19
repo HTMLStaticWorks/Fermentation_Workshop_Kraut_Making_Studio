@@ -36,9 +36,9 @@
       $('.dash-panel').removeClass('active');
       $('#panel-' + tab).addClass('active');
 
-      // Update topbar title (optional)
-      const label = $(this).text().trim();
-      $('.dash-topbar-title').text(label);
+      // Update topbar title (disabled to prevent header/panel title repetition)
+      // const label = $(this).text().trim();
+      // $('.dash-topbar-title').text(label);
 
       // Close sidebar on mobile after selection
       if ($(window).width() <= 1024) {

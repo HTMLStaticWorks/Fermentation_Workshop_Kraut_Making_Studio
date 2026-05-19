@@ -170,6 +170,9 @@
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+.card-img-wrap img[src*="Gut Health & Ferments"] {
+  object-position: center bottom;
+}
 .card:hover .card-img-wrap img { transform: scale(1.06); }
 
 .card-badge {
