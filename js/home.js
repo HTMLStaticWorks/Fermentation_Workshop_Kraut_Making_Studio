@@ -83,7 +83,7 @@
 
   const products = [
     {
-      img: 'https://images.unsplash.com/photo-1584285405429-136bf988919c?w=600&q=80',
+      img: 'https://th.bing.com/th/id/OIP.WJoot2gnG_h9Qse5G-cLvgHaHZ?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
       badge: 'Top Pick',
       title: 'Weck Fermenting Jar Set',
       desc: 'Authentic German glass crocks with clamp lids. Perfect air-lock seal for anaerobic ferments.',
@@ -150,10 +150,10 @@
   ];
 
   const galleryItems = [
-    { img: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=500&q=80', label: 'Kimchi in Process' },
+    { img: 'https://th.bing.com/th/id/OIP.WJoot2gnG_h9Qse5G-cLvgHaHZ?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3', label: 'Kimchi in Process' },
     { img: 'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?w=500&q=80', label: 'Fresh Kraut' },
     { img: 'https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?w=500&q=80', label: 'Kombucha SCOBY' },
-    { img: 'https://images.unsplash.com/photo-1584285405429-136bf988919c?w=500&q=80', label: 'Ferment Lab' },
+    { img: 'https://i.pinimg.com/originals/3f/b9/de/3fb9dee05132df6245b8d7a86483d9c7.jpg', label: 'Ferment Lab' },
     { img: 'https://rukminim2.flixcart.com/image/480/640/xif0q/container/p/u/9/ceramic-jars-1000ml-brown-kutting-jar-hc-the-crafts-original-imagxjv7dvfsxcye.jpeg?q=90', label: 'Pickle Jars' },
     { img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80', label: 'Live Workshop' },
     { img: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=500&q=80', label: 'Miso Ceremony' },

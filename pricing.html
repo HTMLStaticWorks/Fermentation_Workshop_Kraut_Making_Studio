@@ -4,32 +4,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KrautCraft | Fermentation Workshop & Kraut Making Studio</title>
+  <title>KrautCraft | Membership Pricing</title>
   <meta name="description"
-    content="Master the ancient art of fermentation. Join KrautCraft's hands-on workshops, online courses, and artisan shop for all your sauerkraut, kimchi & kombucha needs.">
-  <meta name="keywords" content="fermentation, sauerkraut, kimchi, kombucha, workshop, kraut making">
-  <meta property="og:title" content="KrautCraft Fermentation Studio">
-  <meta property="og:description" content="From humble kraut to complex kombucha — master fermentation with us.">
-  <meta property="og:type" content="website">
+    content="Simple, transparent membership pricing. Start for free or choose a Pro or Studio membership to unlock 200+ lessons, recipes, and live workshops.">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ca8a04' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='5' width='12' height='15' rx='3' /><rect x='8' y='2' width='8' height='3' rx='1' /><path d='M6 14c2 0 3-1 6-1s4 1 6 1' /><path d='M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z' /></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/home.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-  <script src="js/main.js" defer></script>
-  <script src="js/home.js" defer></script>
+  <link rel="stylesheet" href="css/pages.css">
+  
+  <style>
+    /* Premium standalone pricing styling */
+    .premium-pricing {
+      background-color: #fafaf9; /* Very light warm gray */
+      padding: 6rem 0;
+    }
+    .pricing-cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      align-items: stretch;
+      margin-top: 2rem;
+    }
+    .premium-card {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 24px;
+      padding: 3.5rem 2.5rem;
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    .premium-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    }
+    .premium-card.featured {
+      background: #1c1917;
+      color: #fff;
+      border-color: #1c1917;
+      transform: scale(1.03);
+    }
+    .premium-card.featured:hover {
+      transform: translateY(-12px) scale(1.03);
+    }
+    .card-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #f5f5f4;
+      color: #78716c;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .featured .card-badge {
+      background: #ca8a04;
+      color: #fff;
+    }
+    .card-plan-name {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1c1917;
+    }
+    .featured .card-plan-name {
+      color: #fff;
+    }
+    .card-price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      color: #1c1917;
+    }
+    .featured .card-price {
+      color: #fff;
+    }
+    .card-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #78716c;
+      margin-left: 0.25rem;
+    }
+    .featured .card-price span {
+      color: #a8a29e;
+    }
+    .card-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 3rem 0;
+      flex-grow: 1;
+    }
+    .card-features li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid #f5f5f4;
+      display: flex;
+      align-items: center;
+      font-size: 0.98rem;
+      color: #44403c;
+    }
+    .featured .card-features li {
+      border-color: #292524;
+      color: #d6d3d1;
+    }
+    .card-features li:last-child {
+      border-bottom: none;
+    }
+    .feature-icon {
+      margin-right: 0.75rem;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-btn {
+      width: 100%;
+      padding: 1.1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-light {
+      background: #1c1917;
+      color: #fff;
+    }
+    .btn-light:hover {
+      background: #292524;
+    }
+    .btn-gold {
+      background: #ca8a04;
+      color: #fff;
+    }
+    .btn-gold:hover {
+      background: #a16207;
+    }
+    
+    [data-theme="dark"] .premium-pricing {
+      background-color: var(--clr-bg-alt);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) {
+      background: var(--clr-surface);
+      border-color: var(--clr-border);
+      color: var(--clr-text);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) .card-plan-name,
+    [data-theme="dark"] .premium-card:not(.featured) .card-price {
+      color: var(--clr-text);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) .card-price span {
+      color: var(--clr-text-muted);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) .card-features li {
+      border-color: var(--clr-border);
+      color: var(--clr-text-muted);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) .card-badge {
+      background: var(--clr-surface-alt);
+      color: var(--clr-text-muted);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) .btn-light {
+      background: var(--clr-surface-alt);
+      color: var(--clr-text);
+    }
+    [data-theme="dark"] .premium-card:not(.featured) .btn-light:hover {
+      background: var(--clr-border);
+    }
+
+    /* FAQ Section */
+    .pricing-faq {
+      padding: 6rem 0;
+      background: #fff;
+    }
+    [data-theme="dark"] .pricing-faq {
+      background: var(--clr-bg);
+    }
+    .faq-grid {
+      max-width: 800px;
+      margin: 3rem auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .faq-item {
+      border: 1px solid #e7e5e4;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    [data-theme="dark"] .faq-item {
+      border-color: var(--clr-border);
+    }
+    .faq-question {
+      padding: 1.5rem;
+      background: #fafaf9;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    [data-theme="dark"] .faq-question {
+      background: var(--clr-surface);
+      color: var(--clr-text);
+    }
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+      color: #57534e;
+      line-height: 1.6;
+    }
+    [data-theme="dark"] .faq-answer {
+      color: var(--clr-text-muted);
+    }
+    .faq-item.active .faq-answer {
+      padding: 1.5rem;
+      max-height: 200px;
+      border-top: 1px solid #e7e5e4;
+      transition: all 0.3s ease-out;
+    }
+    [data-theme="dark"] .faq-item.active .faq-answer {
+      border-top-color: var(--clr-border);
+    }
+    .faq-toggle {
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+    
+    @media (max-width: 1024px) {
+      .pricing-cards-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 2rem auto 0 auto;
+      }
+      .premium-card.featured {
+        transform: none;
+      }
+      .premium-card.featured:hover {
+        transform: translateY(-12px);
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- Page Loader -->
-  <div id="page-loader" role="status" aria-label="Loading page">
+  <div id="page-loader" role="status">
     <div class="loader-jar">
       <div class="loader-jar-icon"></div>
-      <p>Brewing your experience…</p>
+      <p>Loading plans…</p>
     </div>
   </div>
 
@@ -74,10 +312,10 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="shop.html" class="nav-link" data-page="shop">Shop</a>
+          <a href="pricing.html" class="nav-link active" data-page="pricing">Pricing</a>
         </div>
         <div class="nav-item">
-          <a href="pricing.html" class="nav-link" data-page="pricing">Pricing</a>
+          <a href="shop.html" class="nav-link" data-page="shop">Shop</a>
         </div>
         <div class="nav-item">
           <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
@@ -138,8 +376,6 @@
           <span class="notif-dot" id="cart-dot" style="display:none;"></span>
         </a>
 
-
-
         <!-- Login CTA -->
         <a href="login.html" class="btn btn-primary hide-mobile" style="height: 40px; display: inline-flex; align-items: center; justify-content: center; padding-top: 0; padding-bottom: 0;">Login</a>
 
@@ -175,7 +411,7 @@
         <a href="workshops.html#advanced">Advanced Ferments</a>
         <a href="workshops.html#kraut">Kraut Masterclass</a>
       </div>
-      <a href="pricing.html" class="mobile-nav-link" data-page="pricing">
+      <a href="pricing.html" class="mobile-nav-link active" data-page="pricing">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <line x1="12" y1="10" x2="12" y2="10"/>
@@ -192,8 +428,6 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
         Contact
       </a>
-
-      <div class="mobile-nav-divider"></div>
 
       <div class="mobile-nav-divider"></div>
       <a href="login.html" class="mobile-nav-link">
@@ -219,306 +453,127 @@
     </div>
   </div>
 
-
-  <!-- ══════════════════════════════════════════════════════
-     HERO SECTION
-══════════════════════════════════════════════════════ -->
-  <section class="hero" id="hero" aria-label="Hero">
-    <div class="hero-bg">
-      <img src="https://images.pexels.com/photos/28645472/pexels-photo-28645472.jpeg"
-        alt="Fermentation jars with vegetables" class="hero-bg-img" fetchpriority="high">
-      <div class="hero-overlay"></div>
-    </div>
-
-    <div class="container hero-content">
-      <div class="hero-badge fade-in" data-reveal>
-        🌿 Craft · Culture · Community
-      </div>
-      <h1 class="hero-title slide-up" data-reveal>
-        Master the Ancient Art<br>of <span class="hero-accent">Fermentation</span>
-      </h1>
-      <p class="hero-subtitle fade-in" data-reveal data-reveal-delay="0.2">
-        From humble sauerkraut to complex kombucha — join 50,000+ food artisans learning to ferment, heal, and nourish
-        with KrautCraft.
-      </p>
-      <div class="hero-cta fade-in" data-reveal>
-        <a href="workshops.html" class="btn btn-primary btn-xl">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polygon points="5 3 19 12 5 21 5 3" />
-          </svg>
-          Start Your Journey
-        </a>
-        <a href="#how-it-works" class="btn btn-white btn-xl">Watch How It Works</a>
-      </div>
-      <div class="hero-stats" data-reveal>
-        <div class="hero-stat">
-          <span class="hero-stat-value" data-count="50000">0</span>
-          <span class="hero-stat-label">Students</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value" data-count="120">0</span>
-          <span class="hero-stat-label">Recipes</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value" data-count="98">0</span>
-          <span class="hero-stat-label">% Satisfaction</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <a href="#features" class="hero-scroll" aria-label="Scroll down">
-      <div class="hero-scroll-mouse"></div>
-    </a>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-     TRUST BAR
-══════════════════════════════════════════════════════ -->
-  <section class="trust-bar">
-    <div class="container">
-      <div class="trust-inner">
-        <p class="trust-label">Featured In</p>
-        <div class="trust-logos">
-          <span class="trust-logo">🍃 Food & Ferment</span>
-          <span class="trust-logo">📰 NY Health Mag</span>
-          <span class="trust-logo">🎙 Gut Health Podcast</span>
-          <span class="trust-logo">🏆 Artisan Foods Award</span>
-          <span class="trust-logo">📚 Ferment Weekly</span>
-        </div>
-      </div>
+  <!-- PAGE HERO -->
+  <section class="page-hero"
+    style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1600&q=80')">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a> <span aria-hidden="true">›</span> <span>Pricing</span>
+      </nav>
+      <h1 data-reveal>Membership Plans</h1>
+      <p data-reveal>Simple, transparent plans designed for every stage of your fermentation journey.</p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════
-     FEATURES SECTION
-══════════════════════════════════════════════════════ -->
-  <section class="section" id="features">
+  <!-- PRICING CARDS -->
+  <section class="section premium-pricing">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" data-reveal>Why KrautCraft</span>
-        <h2 class="section-title" data-reveal>Everything You Need to <span>Ferment Fearlessly</span></h2>
-        <p class="section-subtitle" data-reveal>A complete learning ecosystem built for beginners and master fermenters
-          alike.</p>
+        <span class="section-label">Find Your Fit</span>
+        <h2 class="section-title">Simple, Transparent <span>Pricing</span></h2>
+        <p class="section-subtitle">No hidden fees. Cancel anytime. Start free — upgrade when you're ready.</p>
         <div class="divider"></div>
       </div>
 
-      <div class="card-grid">
-        <!-- Feature cards with real images -->
-        <div class="feature-card" data-reveal>
-          <div class="feature-icon">
-            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&q=80" alt="Live Workshops">
-          </div>
-          <h3>Live Workshops</h3>
-          <p class="card-text">Hands-on, small-group sessions with our master fermenters. Online & in-person options
-            available every week.</p>
-          <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Browse Classes</a>
+      <div class="pricing-cards-container">
+        <!-- Free -->
+        <div class="premium-card">
+          <div class="card-badge">Free Forever</div>
+          <div class="card-plan-name">Starter</div>
+          <div class="card-price">$0<span>/mo</span></div>
+          <ul class="card-features">
+            <li><span class="feature-icon">✅</span> 10 free lessons</li>
+            <li><span class="feature-icon">✅</span> Community access</li>
+            <li><span class="feature-icon">✅</span> Basic recipe library</li>
+            <li><span class="feature-icon">❌</span> Live workshops</li>
+            <li><span class="feature-icon">❌</span> Certifications</li>
+          </ul>
+          <a href="register.html" class="card-btn btn-light">Get Started Free</a>
         </div>
-
-        <div class="feature-card reveal-d1" data-reveal>
-          <div class="feature-icon">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80" alt="Video Courses">
-          </div>
-          <h3>Video Courses</h3>
-          <p class="card-text">Over 200+ HD video lessons you can pause, rewind, and follow along at your own pace,
-            forever.</p>
-          <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">View Courses</a>
+        
+        <!-- Pro -->
+        <div class="premium-card featured">
+          <div class="card-badge">Most Popular</div>
+          <div class="card-plan-name">Pro Fermenter</div>
+          <div class="card-price">$19<span>/mo</span></div>
+          <ul class="card-features">
+            <li><span class="feature-icon">✅</span> All 200+ lessons</li>
+            <li><span class="feature-icon">✅</span> 2 Live workshops/mo</li>
+            <li><span class="feature-icon">✅</span> Full recipe library</li>
+            <li><span class="feature-icon">✅</span> Certificates</li>
+            <li><span class="feature-icon">✅</span> Priority support</li>
+          </ul>
+          <a href="register.html" class="card-btn btn-gold">Start 14-Day Free Trial</a>
         </div>
-
-        <div class="feature-card reveal-d2" data-reveal>
-          <div class="feature-icon">
-            <img
-              src="https://centralca.cdn-anvilcms.net/media/images/2022/01/13/images/Artisan_shop_pix.max-1200x675.jpg"
-              alt="Artisan Shop">
-          </div>
-          <h3>Artisan Shop</h3>
-          <p class="card-text">Handpicked crocks, starter cultures, rare salts, and specialty equipment delivered to
-            your door.</p>
-          <a href="shop.html" class="btn btn-outline btn-sm mt-auto">Shop Now</a>
-        </div>
-
-        <div class="feature-card reveal-d3" data-reveal>
-          <div class="feature-icon">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80" alt="Community Forum">
-          </div>
-          <h3>Community Forum</h3>
-          <p class="card-text">Connect with 50,000+ fermenters. Share batches, get feedback, and grow together in a
-            welcoming community.</p>
-          <a href="register.html" class="btn btn-outline btn-sm mt-auto">Join Free</a>
-        </div>
-
-        <div class="feature-card reveal-d4" data-reveal>
-          <div class="feature-icon">
-            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&q=80" alt="Recipe Library">
-          </div>
-          <h3>Recipe Library</h3>
-          <p class="card-text">120+ tested, seasonal recipes from sauerkraut basics to exotic koji ferments with
-            step-by-step guidance.</p>
-          <a href="#" class="btn btn-outline btn-sm mt-auto">Explore Recipes</a>
-        </div>
-
-        <div class="feature-card reveal-d5" data-reveal>
-          <div class="feature-icon">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80" alt="Certifications">
-          </div>
-          <h3>Certifications</h3>
-          <p class="card-text">Earn industry-recognized certificates in artisan fermentation, gut health nutrition, and
-            fermented beverage making.</p>
-          <a href="workshops.html" class="btn btn-outline btn-sm mt-auto">Get Certified</a>
+        
+        <!-- Studio -->
+        <div class="premium-card">
+          <div class="card-badge">Best Value</div>
+          <div class="card-plan-name">Studio Master</div>
+          <div class="card-price">$39<span>/mo</span></div>
+          <ul class="card-features">
+            <li><span class="feature-icon">✅</span> Everything in Pro</li>
+            <li><span class="feature-icon">✅</span> Unlimited live sessions</li>
+            <li><span class="feature-icon">✅</span> 1-on-1 mentoring</li>
+            <li><span class="feature-icon">✅</span> 20% shop discount</li>
+            <li><span class="feature-icon">✅</span> Private Slack group</li>
+          </ul>
+          <a href="register.html" class="card-btn btn-light">Go Studio Master</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════
-     POPULAR WORKSHOPS
-══════════════════════════════════════════════════════ -->
-  <section class="section section--alt" id="workshops">
+  <!-- FAQ SECTION -->
+  <section class="section pricing-faq">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" data-reveal>Learning Paths</span>
-        <h2 class="section-title" data-reveal>Popular <span>Workshops</span></h2>
-        <p class="section-subtitle" data-reveal>Join thousands who have already transformed their kitchens into
-          fermentation labs.</p>
+        <span class="section-label">Questions?</span>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
         <div class="divider"></div>
       </div>
 
-      <div class="card-grid" id="workshops-grid">
-        <!-- Cards injected via JS -->
-      </div>
-
-      <div class="text-center" style="margin-top:var(--sp-12);" data-reveal>
-        <a href="workshops.html" class="btn btn-primary btn-lg">View All Workshops</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-     HOW IT WORKS
-══════════════════════════════════════════════════════ -->
-  <section class="section" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label" data-reveal>Simple Process</span>
-        <h2 class="section-title" data-reveal>How It <span>Works</span></h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="how-cards" data-reveal>
-        <div class="how-card">
-          <div class="how-card-num">01</div>
-          <div class="how-card-img">
-            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&q=80" alt="Sign Up">
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I cancel my membership at any time?</span>
+            <span class="faq-toggle">+</span>
           </div>
-          <div class="how-card-content">
-            <span class="how-card-tag">Register</span>
-            <h3>Sign Up Free</h3>
-            <p>Create your account in 30 seconds — no credit card required to explore.</p>
+          <div class="faq-answer">
+            <p>Absolutely. You can cancel your monthly subscription at any time with a single click from your profile settings page. No cancellation fees, no contracts, and no questions asked.</p>
           </div>
         </div>
 
-        <div class="how-card">
-          <div class="how-card-num">02</div>
-          <div class="how-card-img">
-            <img src="https://images.unsplash.com/photo-1506459225024-1428097a7e18?w=400&q=80" alt="Choose Course">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is included in the 14-day Pro trial?</span>
+            <span class="faq-toggle">+</span>
           </div>
-          <div class="how-card-content">
-            <span class="how-card-tag">Explore</span>
-            <h3>Choose a Course</h3>
-            <p>Browse workshops by ferment type, skill level, or your schedule.</p>
+          <div class="faq-answer">
+            <p>The 14-day free trial gives you complete access to all 200+ lessons, recipes, premium videos, and certifications in our Pro plan. If you cancel before the trial ends, you won't be charged a single penny.</p>
           </div>
         </div>
 
-        <div class="how-card">
-          <div class="how-card-num">03</div>
-          <div class="how-card-img">
-            <img src="https://static.wixstatic.com/media/64f9ce_81e96d8f91d54e09a23b6afcde8161cd~mv2.png/v1/fill/w_720,h_720,al_c,q_90/64f9ce_81e96d8f91d54e09a23b6afcde8161cd~mv2.png" alt="Learn">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are the live workshops recorded?</span>
+            <span class="faq-toggle">+</span>
           </div>
-          <div class="how-card-content">
-            <span class="how-card-tag">Master</span>
-            <h3>Learn & Practice</h3>
-            <p>Follow expert video lessons, live sessions, and our guided recipe library.</p>
+          <div class="faq-answer">
+            <p>Yes! Every single live session is recorded and made available in our master archive so you can rewatch or study them at your own convenience, even if you couldn't make it to the live stream.</p>
           </div>
         </div>
 
-
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-     FEATURED PRODUCTS
-══════════════════════════════════════════════════════ -->
-  <section class="section section--alt" id="products">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label" data-reveal>Artisan Shop</span>
-        <h2 class="section-title" data-reveal>Tools of the <span>Trade</span></h2>
-        <p class="section-subtitle" data-reveal>Premium fermentation supplies, lovingly curated for serious home
-          fermenters.</p>
-        <div class="divider"></div>
-      </div>
-
-      <div class="card-grid" id="products-grid">
-        <!-- Rendered via JS -->
-      </div>
-
-      <div class="text-center" style="margin-top:var(--sp-12);" data-reveal>
-        <a href="shop.html" class="btn btn-secondary btn-lg">Visit the Shop</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-     TESTIMONIALS
-══════════════════════════════════════════════════════ -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label" data-reveal>Community Voices</span>
-        <h2 class="section-title" data-reveal>What Our Students <span>Say</span></h2>
-        <div class="divider"></div>
-      </div>
-      <div class="testimonial-carousel" id="testimonial-carousel">
-        <!-- Rendered via JS -->
-      </div>
-      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Testimonials navigation"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-     GALLERY / INSPIRATION
-══════════════════════════════════════════════════════ -->
-  <section class="section section--alt" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label" data-reveal>From the Studio</span>
-        <h2 class="section-title" data-reveal>Fermentation <span>Gallery</span></h2>
-        <div class="divider"></div>
-      </div>
-      <div class="gallery-grid" id="gallery-grid">
-        <!-- Rendered via JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════
-     PRICING
-══════════════════════════════════════════════════════ -->
-
-
-  <!-- ══════════════════════════════════════════════════════
-     CTA BANNER
-══════════════════════════════════════════════════════ -->
-  <section class="cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="container cta-banner-content" data-reveal>
-      <h2>Ready to Start <span>Fermenting?</span></h2>
-      <p>Join 50,000+ artisans who've discovered the joy of living foods. Your first class is on us.</p>
-      <div class="hero-cta">
-        <a href="register.html" class="btn btn-white btn-xl">Create Free Account</a>
-        <a href="workshops.html" class="btn btn-outline btn-xl"
-          style="border-color:rgba(255,255,255,0.4);color:#fff;">Browse Workshops</a>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer discounts for annual billing or groups?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we offer custom specialized annual membership rates with up to 25% savings, as well as team and kitchen packages for schools, restaurants, or community organizations. Please contact our support team to learn more.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -532,13 +587,13 @@
         <div class="footer-col footer-brand">
           <a href="index.html" class="site-logo" style="text-decoration:none;">
             <div class="logo-mark" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="6" y="5" width="12" height="15" rx="3" />
-            <rect x="8" y="2" width="8" height="3" rx="1" />
-            <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
-            <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
-          </svg>
-        </div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="5" width="12" height="15" rx="3" />
+                <rect x="8" y="2" width="8" height="3" rx="1" />
+                <path d="M6 14c2 0 3-1 6-1s4 1 6 1" />
+                <path d="M12 8c1.5 0 2 1 2 2s-1 2-2 2-2-1-2-2 1.5-2 2-2z" />
+              </svg>
+            </div>
             <div class="logo-text">
               <span class="logo-name" style="color:#E8DDD0;">KrautCraft</span>
               <span class="logo-tagline">Fermentation Studio</span>
@@ -635,25 +690,25 @@
     </div>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  
   <script>
     // Set footer year dynamically
     document.getElementById('footer-year').textContent = new Date().getFullYear();
-    // Newsletter quick handler
-    document.getElementById('footer-subscribe-btn')?.addEventListener('click', function () {
-      const email = document.getElementById('footer-email').value.trim();
-      if (email && email.includes('@')) {
-        if (window.showToast) showToast('success', '🎉 You\'re subscribed!', 'Welcome to the fermentation community!');
-        document.getElementById('footer-email').value = '';
-      } else {
-        if (window.showToast) showToast('error', 'Invalid email', 'Please enter a valid email address.');
-      }
+    
+    // Interactive FAQ accordion
+    $(function() {
+      $('.faq-question').on('click', function() {
+        const item = $(this).closest('.faq-item');
+        item.toggleClass('active');
+        // Optional smooth sibling collapse
+        $('.faq-item').not(item).removeClass('active');
+      });
     });
   </script>
-
-
-  <!-- Toast Container -->
-  <div id="toast-container" role="alert" aria-live="polite"></div>
-
+  
+  <div id="toast-container"></div>
 </body>
 
 </html>
