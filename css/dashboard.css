@@ -76,13 +76,9 @@
 }
 .sidebar-logo-mark {
   width: 38px; height: 38px;
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  color: #fff;
   flex-shrink: 0;
 }
 .sidebar-brand-name {
