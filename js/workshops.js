@@ -98,6 +98,9 @@
     } else {
       renderCards(allWorkshops);
     }
+    // Force close mobile nav drawer on hash change/filter selection
+    $('#hamburger').removeClass('open').attr('aria-expanded', false);
+    $('#mobile-nav').removeClass('open');
   }
 
   $(document).ready(function () {

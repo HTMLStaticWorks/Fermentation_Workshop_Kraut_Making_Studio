@@ -91,25 +91,57 @@
      5. HAMBURGER MENU
   ────────────────────────────────────────────────────────── */
   function bindHamburger() {
-    $(document).off('click', '#hamburger').on('click', '#hamburger', function () {
+    const $hamburger = $('#hamburger');
+    const $mobileNav = $('#mobile-nav');
+    const $body = $('body');
+
+    // Helper to close everything
+    function closeMenu() {
+      $hamburger.removeClass('open').attr('aria-expanded', false);
+      $mobileNav.removeClass('open');
+      $('.mobile-nav-sub').removeClass('open');
+      $body.css('overflow', '');
+    }
+
+    // Toggle click on hamburger button
+    $(document).off('click', '#hamburger').on('click', '#hamburger', function (e) {
+      e.stopPropagation();
       const open = !$(this).hasClass('open');
       $(this).toggleClass('open', open).attr('aria-expanded', open);
-      $('#mobile-nav').toggleClass('open', open);
+      $mobileNav.toggleClass('open', open);
+      $body.css('overflow', open ? 'hidden' : '');
+      
+      // If we are closing the menu, also collapse the submenu
+      if (!open) {
+        $('.mobile-nav-sub').removeClass('open');
+      }
     });
+
     // Close on outside click
     $(document).off('click.hamburgerClose').on('click.hamburgerClose', function (e) {
       if (!$(e.target).closest('#hamburger, #mobile-nav').length) {
-        $('#hamburger').removeClass('open').attr('aria-expanded', false);
-        $('#mobile-nav').removeClass('open');
+        closeMenu();
       }
     });
-    // Close on nav link click
-    $(document).off('click', '.mobile-nav-link').on('click', '.mobile-nav-link', function () {
-      // Don't close if clicking a button (Theme/RTL toggles)
-      if ($(this).is('button')) return;
+
+    // Mobile nav link click handling
+    $(document).off('click', '#mobile-nav a').on('click', '#mobile-nav a', function (e) {
+      const $this = $(this);
       
-      $('#hamburger').removeClass('open').attr('aria-expanded', false);
-      $('#mobile-nav').removeClass('open');
+      // Check if this link is the Workshops submenu toggle
+      const isSubmenuToggle = $this.attr('data-page') === 'workshops' || $this.next('.mobile-nav-sub').length > 0;
+
+      if (isSubmenuToggle) {
+        e.preventDefault();
+        const $submenu = $this.next('.mobile-nav-sub');
+        const isOpen = $submenu.hasClass('open');
+        
+        $submenu.toggleClass('open', !isOpen);
+        $this.attr('aria-expanded', !isOpen);
+      } else {
+        // Normal link or submenu link click: navigate and close the menu
+        closeMenu();
+      }
     });
   }
 
